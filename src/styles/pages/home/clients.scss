@@ -1,0 +1,79 @@
+.clients__section {
+  width: 100%;
+  padding: 2rem 0;
+
+  .clients__header {
+    @extend %title-30;
+    text-align: center;
+    font-weight: 600;
+    color: $color-tropical-rain-forest;
+  }
+
+  .clients__slider {
+    width: 100%;
+    height: var(--clientLogoHeight);
+    overflow: hidden;
+    padding: 1rem 0;
+    margin: 3rem 0 0;
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent,
+      $color-tropical-rain-forest,
+      transparent
+    );
+    mask-image: linear-gradient(
+      to right,
+      transparent,
+      $color-tropical-rain-forest,
+      transparent
+    );
+
+    &:hover {
+      figure {
+        animation-play-state: paused !important;
+        filter: grayscale(1);
+      }
+    }
+
+    .clients__slider__list {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      min-width: calc(var(--clientLogoWidth) * var(--clientsQuantity));
+      display: flex;
+      align-items: center;
+
+      figure {
+        --time: 20s;
+        position: absolute;
+        left: 100%;
+        width: var(--clientLogoWidth);
+        height: var(--clientLogoHeight);
+        animation: autoRun var(--time) linear infinite;
+        animation-delay: calc(
+          (var(--time) / var(--clientsQuantity)) *
+            (var(--clientLogoPosition) - 1)
+        );
+        transition: filter 0.3s ease-in-out;
+
+        &:hover {
+          filter: grayscale(0);
+        }
+
+        img {
+          @extend %cover;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+@keyframes autoRun {
+  from {
+    left: 100%;
+  }
+  to {
+    left: calc(var(--clientLogoWidth) * -1);
+  }
+}

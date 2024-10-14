@@ -1,0 +1,34 @@
+.preloader {
+  @extend %cover;
+  @extend %center;
+  text-align: center;
+  background-color: $color-black;
+  color: $color-white;
+  z-index: z("preloader");
+}
+.preloader__text {
+  max-width: 80rem;
+  font-size: 0;
+
+  span {
+    display: inline-block;
+    overflow: hidden;
+  }
+
+  span span {
+    @extend %title-53;
+    font-family: $font-ginger;
+  }
+}
+.preloader__number {
+  position: absolute;
+  overflow: hidden;
+  bottom: 5rem;
+  right: 5%;
+  @extend %title-120;
+}
+
+.preloader__number__text {
+  display: inline-block;
+  font-family: $font-ginger;
+}

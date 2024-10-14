@@ -1,0 +1,61 @@
+.expertise__section {
+  position: relative;
+  width: 100%;
+  gap: 2rem;
+  padding: 1rem 9rem;
+  overflow: hidden;
+
+  @include media("<tablet") {
+    padding: 1rem 4rem;
+  }
+
+  .expertise__header {
+    @extend %title-30;
+    font-weight: 600;
+    color: $color-tropical-rain-forest;
+  }
+
+  .expertise__items__wrapper {
+    @include flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem 0 0;
+
+    @include media("<tablet") {
+      justify-content: center;
+    }
+
+    @include media("<phone") {
+      flex-flow: row wrap;
+    }
+
+    & > div {
+      width: 100%;
+      @include flex(center, flex-start, column);
+      gap: 2rem;
+      padding: 2rem;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+      svg {
+        fill: $color-luxor-gold;
+        fill: none;
+        stroke: $color-luxor-gold;
+        stroke-width: 1.5px;
+        filter: drop-shadow(rgba(0, 0, 0, 0.35) 0px 5px 15px);
+      }
+
+      span {
+        @extend %title-20;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+
+      a {
+        @extend %link--hidden;
+        @include flex(center, flex-start, row);
+        color: $color-tropical-rain-forest;
+        font-weight: 400;
+      }
+    }
+  }
+}

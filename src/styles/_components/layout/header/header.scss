@@ -1,0 +1,57 @@
+.header {
+  position: sticky;
+  top: 0;
+  @extend %backdrop__blur;
+  z-index: z("level-two");
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.header__desktop {
+  @include flex(center, space-between, row);
+  gap: 1.6rem;
+  height: var(--header-height);
+  padding: 0rem 2rem;
+  background-color: $color-white;
+
+  // background-color: $color-white;
+
+  .logo__link {
+    @include flex;
+
+    figure {
+      position: relative;
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50px;
+    }
+
+    img {
+      @extend %cover;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+  }
+  nav.nav__wrapper {
+    & > ul {
+      list-style: none;
+      @include flex(center, flex-start, row);
+      gap: 3rem;
+
+      li {
+        a {
+          @extend %link--hidden;
+          line-height: 1.2;
+          font-size: 1.2rem;
+          font-weight: 600;
+          color: $color-tropical-rain-forest;
+          //   font-family: $font-work-sans;
+          transition: color 300ms ease-in-out;
+
+          &:hover {
+            color: $color-tropical-rain-forest;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "image": "/image-4.webp",
+    "text": "Powering Progress with Indigenous Excellence",
+    "button-text": "Who We Are"
+  },
+  {
+    "id": 2,
+    "image": "/image-5.jpg",
+    "text": "Unlocking Potential, Driving Growth",
+    "button-text": "Our Mission"
+  },
+  {
+    "id": 3,
+    "image": "/image-6.webp",
+    "text": "   At Mardent Energy Limited, we are committed to harnessing our rich heritage to deliver innovative upstream oil and gas solutions",
+    "button-text": "Our Operations"
+  }
+]

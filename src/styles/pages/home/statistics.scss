@@ -1,0 +1,59 @@
+.statistics__section {
+  position: relative;
+  width: 100%;
+  gap: 2rem;
+  padding: 6rem 9rem;
+  overflow: hidden;
+
+  @include media("<tablet") {
+    padding: 3rem 4rem;
+  }
+
+  .statistics__items__wrapper {
+    @include flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin: 3rem 0 0;
+
+    @include media("<tablet") {
+      justify-content: center;
+    }
+
+    @include media("<phone") {
+      flex-flow: row wrap;
+    }
+
+    & > .statistics__item {
+      width: 100%;
+      @include flex(center, center, column);
+      gap: 2rem;
+      padding: 2rem;
+      background-color: $color-wild-sand;
+      border-radius: 10px;
+
+      &:nth-child(2) {
+        h2 {
+          color: $color-tropical-rain-forest;
+        }
+      }
+
+      &:nth-child(3) {
+        h2 {
+          color: $color-gray;
+        }
+      }
+
+      h2 {
+        @extend %title-45;
+        font-weight: 700;
+      }
+
+      span {
+        font-weight: 300;
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        color: inherit;
+      }
+    }
+  }
+}
