@@ -55,7 +55,7 @@ export default function Expertise() {
             />
           </svg>
           <span>Change</span>
-          <Link href="/">Find out more</Link>
+          <Link href="/change-service">Find out more</Link>
         </div>
 
         <div>
@@ -101,7 +101,7 @@ export default function Expertise() {
             />
           </svg>
           <span>Data</span>
-          <Link href="/">Find out more</Link>
+          <Link href="/data-service">Find out more</Link>
         </div>
 
         <div>
@@ -177,7 +177,7 @@ export default function Expertise() {
             />
           </svg>
           <span>Engineering</span>
-          <Link href="/">Find out more</Link>
+          <Link href="/engineering-service">Find out more</Link>
         </div>
 
         <div>
@@ -239,7 +239,7 @@ export default function Expertise() {
           </svg>
 
           <span>Operations</span>
-          <Link href="/">Find out more</Link>
+          <Link href="/operations-service">Find out more</Link>
         </div>
       </div>
     </section>

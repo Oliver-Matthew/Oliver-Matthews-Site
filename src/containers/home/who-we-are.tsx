@@ -1,6 +1,7 @@
+import Image from "next/image";
+
 import LinkButton from "@/components/common/buttons/link-button";
 import AboutUsImg from "@/assets/images/home/about-us-img.jpg";
-import Image from "next/image";
 
 export default function WhoWeAre() {
   return (
@@ -20,7 +21,10 @@ export default function WhoWeAre() {
           reaching new heights of success.
         </p>
 
-        <LinkButton href="/" style={{ minHeight: "4.5rem", minWidth: "12rem" }}>
+        <LinkButton
+          href="/about-us"
+          style={{ minHeight: "4.5rem", minWidth: "12rem" }}
+        >
           {" "}
           Learn More
         </LinkButton>

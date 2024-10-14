@@ -1,0 +1,31 @@
+main.data__service__page {
+  min-height: 60vh;
+  padding: 4rem 9rem;
+
+  @include media("<tablet") {
+    padding: 2rem 4rem;
+  }
+
+  .data__service__page__header {
+    @extend %title-30;
+    font-weight: 800;
+    color: $color-tropical-rain-forest;
+  }
+
+  .data__service__content {
+    margin: 2rem 0 0;
+    width: min(100%, 1000px);
+
+    p {
+      @extend %description-12;
+      line-height: 1.5;
+
+      span {
+        @extend %description-12;
+        line-height: 1.5;
+        font-weight: 600;
+        color: $color-tropical-rain-forest;
+      }
+    }
+  }
+}

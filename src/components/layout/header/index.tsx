@@ -25,10 +25,10 @@ export default function Header() {
           <nav className="nav__wrapper">
             <ul>
               <li>
-                <Link href="/">About Us</Link>
+                <Link href="/about-us">About Us</Link>
               </li>
               <li>
-                <Link href="/">Business</Link>
+                <Link href="/services">Services</Link>
               </li>
               <li>
                 <Link href="/">Tech</Link>

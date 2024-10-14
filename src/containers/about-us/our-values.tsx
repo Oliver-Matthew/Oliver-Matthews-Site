@@ -17,6 +17,7 @@ export default function OurValues() {
             width={600}
             height={400}
             alt="curiousity"
+            placeholder="blur"
           />
         </figure>
 
@@ -59,6 +60,7 @@ export default function OurValues() {
             width={600}
             height={400}
             alt="individuality"
+            placeholder="blur"
           />
         </figure>
       </div>
@@ -70,6 +72,7 @@ export default function OurValues() {
             width={600}
             height={400}
             alt="togetherness"
+            placeholder="blur"
           />
         </figure>
 
@@ -105,13 +108,25 @@ export default function OurValues() {
         </div>
 
         <figure className="value__item__image">
-          <Image src={IntegrityImg} width={600} height={400} alt="integrity" />
+          <Image
+            src={IntegrityImg}
+            width={600}
+            height={400}
+            alt="integrity"
+            placeholder="blur"
+          />
         </figure>
       </div>
 
       <div className="value__item__wrapper">
         <figure className="value__item__image">
-          <Image src={OwnershipImg} width={600} height={400} alt="ownership" />
+          <Image
+            src={OwnershipImg}
+            width={600}
+            height={400}
+            alt="ownership"
+            placeholder="blur"
+          />
         </figure>
 
         <div className="value__item__text">
