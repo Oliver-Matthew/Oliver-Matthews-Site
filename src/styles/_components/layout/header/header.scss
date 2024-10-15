@@ -13,6 +13,10 @@
   padding: 0rem 2rem;
   background-color: $color-white;
 
+  @include media("<phone") {
+    display: none;
+  }
+
   // background-color: $color-white;
 
   .logo__link {
@@ -38,7 +42,7 @@
       gap: 3rem;
 
       li {
-        a {
+        & > a {
           @extend %link--hidden;
           line-height: 1.2;
           font-size: 1.2rem;
@@ -50,6 +54,130 @@
           &:hover {
             color: $color-tropical-rain-forest;
           }
+        }
+      }
+    }
+  }
+}
+
+.header__mobile {
+  display: none;
+  gap: 1.6rem;
+  height: var(--header-height);
+  padding: 0rem 2rem;
+  background-color: $color-white;
+
+  @include media("<phone") {
+    @include flex(center, space-between, row);
+  }
+
+  .logo__link {
+    @include flex;
+
+    figure {
+      position: relative;
+      width: 5rem;
+      height: 5rem;
+      border-radius: 50px;
+    }
+
+    img {
+      @extend %cover;
+      object-fit: cover;
+      border-radius: inherit;
+    }
+  }
+  .hamburger__btn {
+    position: relative;
+    width: 45px;
+    height: 50%;
+
+    span {
+      display: inline-block;
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      border-radius: 4px;
+      background-color: $color-tropical-rain-forest;
+      transition: opacity 600ms ease-in-out, top 400ms ease-in-out,
+        bottom 400ms ease-in-out, transform 200ms ease-in-out;
+
+      &:first-child {
+        top: 0px;
+      }
+      &:nth-child(2) {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &:last-child {
+        bottom: 0;
+      }
+    }
+
+    &.open {
+      span {
+        transition: opacity 200ms ease-in-out, top 400ms ease-in-out,
+          bottom 400ms ease-in-out, transform 600ms ease-in-out;
+
+        &:first-child {
+          top: 50%;
+          transform: translateY(-50%) rotate(45deg);
+        }
+        &:nth-child(2) {
+          opacity: 0;
+        }
+        &:last-child {
+          bottom: unset;
+          top: 50%;
+          transform: translateY(-50%) rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  .mobile__menu {
+    position: fixed;
+    display: none;
+    left: 0;
+    top: calc(0px + var(--header-height));
+    width: 100vw;
+    height: 100vh;
+    transform: translateX(-100%);
+    opacity: 0;
+    background-color: $color-tropical-rain-forest;
+    transition: opacity 300ms ease-in-out, transform 500ms ease-in-out;
+    z-index: z("level-three");
+
+    @include media("<phone") {
+      display: block;
+    }
+
+    &.open {
+      transform: translateX(0);
+      opacity: 1;
+      transition: transform 200ms ease-in-out, opacity 500ms ease-in-out;
+    }
+
+    .mobile__nav__list {
+      list-style: none;
+      @include flex(flex-start, flex-start, column);
+      gap: 4rem;
+      padding: 2rem 3rem;
+
+      li {
+        width: 100%;
+        border-bottom: 1px solid $color-white;
+        padding: 1rem 0;
+        color: $color-white;
+
+        & > a {
+          @extend %link--hidden;
+          line-height: 1.2;
+          font-size: 3rem;
+          font-weight: 600;
+          color: $color-white;
+          transition: color 300ms ease-in-out;
         }
       }
     }

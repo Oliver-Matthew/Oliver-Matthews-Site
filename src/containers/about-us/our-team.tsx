@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function OurTeam() {
   return (
-    <section className="our__team__section">
+    <section className="our__team__section" id="our-team">
       <h2 className="our__team__header">Meet Our Team</h2>
 
       <div className="team__item__wrapper">

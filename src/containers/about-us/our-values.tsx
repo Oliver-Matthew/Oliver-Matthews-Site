@@ -7,7 +7,7 @@ import Image from "next/image";
 
 export default function OurValues() {
   return (
-    <section className="our__values__section">
+    <section className="our__values__section" id="our-values">
       <h2 className="our__values__header">Our Values</h2>
 
       <div className="value__item__wrapper">

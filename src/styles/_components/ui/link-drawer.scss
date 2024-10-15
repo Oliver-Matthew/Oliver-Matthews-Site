@@ -1,0 +1,67 @@
+.link__drawer__wrapper {
+  position: relative;
+  display: none;
+  width: 100%;
+  background-color: inherit;
+  color: inherit;
+
+  @include media("<phone") {
+    display: block;
+  }
+
+  & > button {
+    @include flex(center, space-between, row);
+    width: 100%;
+    height: max-content;
+    background-color: inherit;
+    color: inherit;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    font-size: 3rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 300ms ease-in-out;
+
+    span {
+      transform: rotate(0deg);
+      transition: transform 300ms ease-in-out;
+
+      &.open {
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  .link__drawer__container {
+    @include flex(flex-start, flex-start, column);
+    gap: 1.4rem;
+    width: 100%;
+    padding: 0 1rem;
+    max-height: 0px;
+    background-color: inherit;
+    color: inherit;
+    opacity: 0;
+    transition: opacity 400ms ease-in-out, max-height 1s ease-in-out;
+    // border: 1px solid blue;
+
+    &.open {
+      max-height: 300px;
+      opacity: 1;
+      transition: opacity 600ms ease-in-out, max-height 400ms ease-in-out;
+    }
+
+    a {
+      @extend %link--hidden;
+      line-height: 1.2;
+      font-size: 2rem;
+      font-weight: 600;
+      color: $color-white;
+      transition: color 300ms ease-in-out;
+
+      &:first-child {
+        margin: 2rem 0 0;
+      }
+    }
+  }
+}

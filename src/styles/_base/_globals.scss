@@ -9,10 +9,10 @@
 }
 
 :root {
-  --header-height: 90px;
+  --header-height: 6rem;
 
   @include media("<phone") {
-    --header-height: 70px;
+    --header-height: 7rem;
   }
 }
 

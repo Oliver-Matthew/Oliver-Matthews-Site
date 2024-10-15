@@ -16,15 +16,28 @@
 @import "_base/fonts";
 @import "_base/globals";
 
+// ------------------------- components----------------------------------
+// layout
 @import "_components/layout/header/header";
 @import "_components/layout/footer/footer";
+
+// button
 @import "_components/common/buttons/primarybutton";
 @import "_components/common/buttons/link-button";
 
+//ui
+@import "_components/ui/dropdown";
+@import "_components/ui/link-drawer";
+
+// ------------------------- pages ----------------------------------
 @import "pages/home/home";
+
 @import "pages/about-us/about-us";
+
 @import "pages/services/services";
 @import "pages/services/change-service";
 @import "pages/services/data-service";
 @import "pages/services/eng-service";
 @import "pages/services/operations-service";
+
+@import "pages/careers/careers";
