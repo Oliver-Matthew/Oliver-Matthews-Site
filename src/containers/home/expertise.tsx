@@ -1,3 +1,4 @@
+import { CustomCSSType } from "@/types/styles";
 import Link from "next/link";
 
 export default function Expertise() {
@@ -7,7 +8,7 @@ export default function Expertise() {
     <section className="expertise__section">
       <h2 className="expertise__header">How We Can Help You</h2>
       <div className="expertise__items__wrapper">
-        <div>
+        <div style={{ "--svgDelay": 1 } as CustomCSSType}>
           <svg
             width="96"
             height="96"
@@ -58,7 +59,7 @@ export default function Expertise() {
           <Link href="/change-service">Find out more</Link>
         </div>
 
-        <div>
+        <div style={{ "--svgDelay": 2 } as CustomCSSType}>
           <svg
             width="96"
             height="96"
@@ -104,7 +105,7 @@ export default function Expertise() {
           <Link href="/data-service">Find out more</Link>
         </div>
 
-        <div>
+        <div style={{ "--svgDelay": 3 } as CustomCSSType}>
           <svg
             viewBox="0 0 83 106"
             fill={svgColor}
@@ -180,7 +181,7 @@ export default function Expertise() {
           <Link href="/engineering-service">Find out more</Link>
         </div>
 
-        <div>
+        <div style={{ "--svgDelay": 4 } as CustomCSSType}>
           <svg
             width="96"
             height="96"
