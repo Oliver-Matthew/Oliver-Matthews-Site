@@ -1,8 +1,8 @@
 import gsap from "gsap";
-import { Dom } from "./dom";
 import { ScrollAnimationProps } from "@/interactions/types";
+import { Component } from "./component";
 
-export class ScrollAnimation extends Dom {
+export class ScrollAnimation extends Component {
   timeline: GSAPTimeline;
   context: string | HTMLElement;
 

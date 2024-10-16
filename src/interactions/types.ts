@@ -1,3 +1,5 @@
+import { ObserverAnimation } from "./classes/observer-animation";
+
 export interface SelectorProps {
   selector: string | HTMLElement;
   secondarySelectors: {

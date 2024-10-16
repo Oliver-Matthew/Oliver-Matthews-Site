@@ -3,14 +3,14 @@ import { Dom } from "../classes/dom";
 import { ScrollAnimation } from "../classes/scroll-animation";
 import { ObserverAnimation } from "../classes/observer-animation";
 
-export class Home extends Dom {
+export class AboutUs extends Dom {
   timeline: GSAPTimeline;
   animationsImages: ObserverAnimation[] = [];
   animations: ScrollAnimation[] & ObserverAnimation[] = [];
 
   constructor() {
     super({
-      selector: ".home__page",
+      selector: ".about__us__page",
       secondarySelectors: {
         animationsImages: '[data-animation="image-reveal"]',
       },

@@ -71,3 +71,10 @@ main {
   // min-height: 100vh;
   will-change: transform;
 }
+
+.image__mask {
+  @extend %cover;
+  background-color: $color-tropical-rain-forest;
+  border-radius: inherit;
+  z-index: z("level-two");
+}

@@ -1,9 +1,9 @@
-import { Dom } from "./dom";
 import gsap from "gsap";
 
 import { ObserverAnimationProps } from "@/interactions/types";
+import { Component } from "./component";
 
-export class ObserverAnimation extends Dom {
+export class ObserverAnimation extends Component {
   timeline: gsap.core.Timeline;
   observer: IntersectionObserver = new window.IntersectionObserver(() => {});
   target: ObserverAnimationProps["target"];
@@ -24,7 +24,7 @@ export class ObserverAnimation extends Dom {
 
     this.timeline = gsap.timeline();
     this.animation = animation;
-    this.target = target;
+    // this.target = target;
 
     this.createObserver();
   }
@@ -42,7 +42,7 @@ export class ObserverAnimation extends Dom {
       root: this.animation?.root,
     });
 
-    this.observer.observe(this.target ?? this.element);
+    this.observer.observe(this.element ?? this.element);
   }
 
   initialize(tween: gsap.TweenVars) {
@@ -70,4 +70,8 @@ export class ObserverAnimation extends Dom {
       this.timeline.call(resolve);
     });
   }
+
+  // animateIn() {}
+
+  // animateOut() {}
 }
