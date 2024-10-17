@@ -17,38 +17,80 @@ import { gsap, useGSAP, SplitType } from "@/utils/gsap";
 // import OwnershipImg from "@/assets/images/about-us/ownnership.jpg";
 
 export default function OurValues() {
-  useGSAP(
-    () => {
-      const sectionHeader = new SplitType(".our__values__header", {
-        types: "words",
+  useGSAP(() => {
+    const sectionHeader = new SplitType(".our__values__header", {
+      types: "words",
+    });
+    const longLines = gsap.utils.toArray(
+      ".value__item__wrapper > hr"
+    ) as HTMLElement[];
+    const valuesHeaders = gsap.utils.toArray(
+      ".value__item__wrapper > h3"
+    ) as HTMLElement[];
+    const valuesHeadersChar = valuesHeaders?.map((header) => {
+      const headerChars = new SplitType(header, {
+        types: "chars",
       });
-      const longLines = gsap.utils.toArray(
-        ".value__item__wrapper > hr"
-      ) as HTMLElement[];
-      const valuesHeaders = gsap.utils.toArray(
-        ".value__item__wrapper > h3"
-      ) as HTMLElement[];
-      const valuesHeadersChar = valuesHeaders?.map((header) => {
-        const headerChars = new SplitType(header, {
-          types: "chars",
-        });
-        return headerChars.chars;
-      });
-      const textsLines = new SplitType(".value__item__text > p", {
-        types: "lines",
-      });
+      return headerChars.chars;
+    });
+    const textsLines = new SplitType(".value__item__text > p", {
+      types: "lines",
+    });
 
-      sectionHeader?.words?.forEach((word) => {
+    sectionHeader?.words?.forEach((word) => {
+      gsap.fromTo(
+        word,
+        {
+          y: "100",
+          rotate: "30deg",
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          rotate: "0deg",
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: word,
+            start: "100px bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    if (longLines) {
+      longLines.forEach((item) => {
+        gsap.from(item, {
+          width: "0",
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom",
+            end: "+=100",
+            toggleActions: "play none none none",
+          },
+        });
+      });
+    }
+
+    valuesHeadersChar?.forEach((word) => {
+      word?.forEach((char) => {
         gsap.fromTo(
-          word,
+          char,
           {
             y: "100",
-            rotate: "30deg",
+            skewY: 5,
             autoAlpha: 0,
           },
           {
             y: "0",
-            rotate: "0deg",
+            skewY: 0,
             autoAlpha: 1,
             duration: 1,
             ease: "power1.inOut",
@@ -62,78 +104,33 @@ export default function OurValues() {
           }
         );
       });
+    });
 
-      if (longLines) {
-        longLines.forEach((item) => {
-          gsap.from(item, {
-            width: "0",
-            duration: 1,
-            ease: "power1.inOut",
-            stagger: 0.15,
-            scrollTrigger: {
-              trigger: item,
-              start: "top bottom",
-              end: "+=100",
-              toggleActions: "play none none none",
-            },
-          });
-        });
-      }
-
-      valuesHeadersChar?.forEach((word) => {
-        word?.forEach((char) => {
-          gsap.fromTo(
-            char,
-            {
-              y: "100",
-              skewY: 5,
-              autoAlpha: 0,
-            },
-            {
-              y: "0",
-              skewY: 0,
-              autoAlpha: 1,
-              duration: 1,
-              ease: "power1.inOut",
-              stagger: 0.1,
-              scrollTrigger: {
-                trigger: word,
-                start: "100px bottom",
-                // end: "+=100",
-                toggleActions: "play none none none",
-              },
-            }
-          );
-        });
-      });
-
-      textsLines?.lines?.forEach((line) => {
-        gsap.fromTo(
-          line,
-          {
-            y: "50",
-            skewY: "5",
-            autoAlpha: 0,
+    textsLines?.lines?.forEach((line) => {
+      gsap.fromTo(
+        line,
+        {
+          y: "50",
+          skewY: "5",
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          skewY: "0",
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: line,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
           },
-          {
-            y: "0",
-            skewY: "0",
-            autoAlpha: 1,
-            duration: 1,
-            ease: "power1.inOut",
-            stagger: 0.3,
-            scrollTrigger: {
-              trigger: line,
-              start: "top bottom",
-              // end: "+=100",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
-    },
-    { scope: ".our__values__section" }
-  );
+        }
+      );
+    });
+  }, [".our__values__section"]);
 
   return (
     <section className="our__values__section" id="our-values">

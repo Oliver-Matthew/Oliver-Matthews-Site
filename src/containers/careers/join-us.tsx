@@ -4,115 +4,112 @@ import { gsap, useGSAP, SplitType } from "@/utils/gsap";
 import JoinUsImg from "@/assets/images/careers/join-us-img.jpg";
 
 export default function JoinUs() {
-  useGSAP(
-    () => {
-      const pageHeader = new SplitType(".join__us__header", {
-        types: "chars",
-      });
+  useGSAP(() => {
+    const pageHeader = new SplitType(".join__us__header", {
+      types: "chars",
+    });
 
-      const sectionHeader = new SplitType(".join__us__text > h3", {
-        types: "chars",
-      });
+    const sectionHeader = new SplitType(".join__us__text > h3", {
+      types: "chars",
+    });
 
-      const textsLines = new SplitType(".join__us__text > p", {
-        types: "lines",
-      });
+    const textsLines = new SplitType(".join__us__text > p", {
+      types: "lines",
+    });
 
-      const joinusImage = document.querySelector(
-        ".join__us__image > .image__mask"
-      );
+    const joinusImage = document.querySelector(
+      ".join__us__image > .image__mask"
+    );
 
-      pageHeader?.chars?.forEach((word) => {
-        gsap.fromTo(
-          word,
-          {
-            y: "100",
-            skewY: 5,
-            autoAlpha: 0,
-          },
-          {
-            y: "0",
-            skewY: 0,
-            autoAlpha: 1,
-            duration: 1,
-            ease: "power1.inOut",
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: word,
-              start: "top bottom",
-              // end: "+=100",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
-
-      sectionHeader?.chars?.forEach((word) => {
-        gsap.fromTo(
-          word,
-          {
-            y: "100",
-            skewY: 5,
-            autoAlpha: 0,
-          },
-          {
-            y: "0",
-            skewY: 0,
-            autoAlpha: 1,
-            duration: 1,
-            ease: "power1.inOut",
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: word,
-              start: "top bottom",
-              // end: "+=100",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
-
-      textsLines?.lines?.forEach((line) => {
-        gsap.fromTo(
-          line,
-          {
-            y: "50",
-            skewY: "5",
-            autoAlpha: 0,
-          },
-          {
-            y: "0",
-            skewY: "0",
-            autoAlpha: 1,
-            duration: 1,
-            ease: "power1.inOut",
-            stagger: 0.3,
-            delay: 0.4,
-            scrollTrigger: {
-              trigger: line,
-              start: "top bottom",
-              // end: "+=100",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
-
-      gsap.to(joinusImage, {
-        duration: 1,
-        height: 0,
-        delay: 0.6,
-        ease: "power3.out",
-        scrollTrigger: {
-          trigger: joinusImage,
-          start: "top bottom",
-          // end: "+=100",
-          toggleActions: "play none none none",
+    pageHeader?.chars?.forEach((word) => {
+      gsap.fromTo(
+        word,
+        {
+          y: "100",
+          skewY: 5,
+          autoAlpha: 0,
         },
-      });
-    },
-    { scope: ".careers__join__us" }
-  );
+        {
+          y: "0",
+          skewY: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: word,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    sectionHeader?.chars?.forEach((word) => {
+      gsap.fromTo(
+        word,
+        {
+          y: "100",
+          skewY: 5,
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          skewY: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: word,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    textsLines?.lines?.forEach((line) => {
+      gsap.fromTo(
+        line,
+        {
+          y: "50",
+          skewY: "5",
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          skewY: "0",
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.3,
+          delay: 0.4,
+          scrollTrigger: {
+            trigger: line,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    gsap.to(joinusImage, {
+      duration: 1,
+      height: 0,
+      delay: 0.6,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: joinusImage,
+        start: "top bottom",
+        // end: "+=100",
+        toggleActions: "play none none none",
+      },
+    });
+  }, [".careers__join__us"]);
 
   return (
     <section className="careers__join__us">

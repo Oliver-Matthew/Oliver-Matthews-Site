@@ -3,117 +3,114 @@
 import { gsap, useGSAP, SplitType } from "@/utils/gsap";
 
 export default function WhyUs() {
-  useGSAP(
-    () => {
-      const sectionHeader = new SplitType(".why__us__header", {
-        types: "chars",
-      });
+  useGSAP(() => {
+    const sectionHeader = new SplitType(".why__us__header", {
+      types: "chars",
+    });
 
-      const itemHeader = new SplitType(".why__us__item > h3", {
-        types: "words",
-      });
+    const itemHeader = new SplitType(".why__us__item > h3", {
+      types: "words",
+    });
 
-      const longLines = gsap.utils.toArray(
-        ".careers__why__us__item > hr"
-      ) as HTMLElement[];
+    const longLines = gsap.utils.toArray(
+      ".careers__why__us__item > hr"
+    ) as HTMLElement[];
 
-      const textsLines = gsap.utils.toArray(
-        ".careers__why__us__item > p"
-      ) as HTMLElement[];
+    const textsLines = gsap.utils.toArray(
+      ".careers__why__us__item > p"
+    ) as HTMLElement[];
 
-      sectionHeader?.chars?.forEach((char) => {
-        gsap.fromTo(
-          char,
-          {
-            y: "100",
-            autoAlpha: 0,
-            skewY: 5,
-          },
-          {
-            y: "0",
-            skewY: 0,
-            autoAlpha: 1,
-            duration: 1,
-            ease: "power1.inOut",
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: char,
-              start: "top bottom",
-              // end: "+=100",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      });
-
-      longLines.forEach((item) => {
-        gsap.from(item, {
-          width: "0",
+    sectionHeader?.chars?.forEach((char) => {
+      gsap.fromTo(
+        char,
+        {
+          y: "100",
+          autoAlpha: 0,
+          skewY: 5,
+        },
+        {
+          y: "0",
+          skewY: 0,
+          autoAlpha: 1,
           duration: 1,
           ease: "power1.inOut",
-          stagger: 0.15,
+          stagger: 0.1,
           scrollTrigger: {
-            trigger: item,
+            trigger: char,
             start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    longLines.forEach((item) => {
+      gsap.from(item, {
+        width: "0",
+        duration: 1,
+        ease: "power1.inOut",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: item,
+          start: "top bottom",
+          toggleActions: "play none none none",
+        },
+      });
+    });
+
+    itemHeader?.words?.forEach((word) => {
+      gsap.fromTo(
+        word,
+        {
+          y: "100",
+          skewY: 5,
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          skewY: 0,
+          autoAlpha: 1,
+          duration: 1,
+          delay: 0.2,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: word,
+            start: "top bottom",
+            // end: "+=100",
             toggleActions: "play none none none",
           },
-        });
-      });
+        }
+      );
+    });
 
-      itemHeader?.words?.forEach((word) => {
-        gsap.fromTo(
-          word,
-          {
-            y: "100",
-            skewY: 5,
-            autoAlpha: 0,
+    textsLines?.forEach((line) => {
+      gsap.fromTo(
+        line,
+        {
+          y: "100",
+          skewY: "5",
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          skewY: "0",
+          autoAlpha: 1,
+          duration: 1,
+          delay: 0.4,
+          ease: "power1.inOut",
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: line,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
           },
-          {
-            y: "0",
-            skewY: 0,
-            autoAlpha: 1,
-            duration: 1,
-            delay: 0.2,
-            ease: "power1.inOut",
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: word,
-              start: "top bottom",
-              // end: "+=100",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
-
-      textsLines?.forEach((line) => {
-        gsap.fromTo(
-          line,
-          {
-            y: "100",
-            skewY: "5",
-            autoAlpha: 0,
-          },
-          {
-            y: "0",
-            skewY: "0",
-            autoAlpha: 1,
-            duration: 1,
-            delay: 0.4,
-            ease: "power1.inOut",
-            stagger: 0.3,
-            scrollTrigger: {
-              trigger: line,
-              start: "top bottom",
-              // end: "+=100",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
-    },
-    { scope: ".careers__why__us" }
-  );
+        }
+      );
+    });
+  }, [".careers__why__us"]);
   return (
     <section className="careers__why__us">
       <h2 className="why__us__header">Why Us?</h2>

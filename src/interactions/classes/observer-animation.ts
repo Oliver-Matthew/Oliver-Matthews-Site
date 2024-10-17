@@ -9,12 +9,7 @@ export class ObserverAnimation extends Component {
   target: ObserverAnimationProps["target"];
   animation: ObserverAnimationProps["animation"];
 
-  constructor({
-    selector,
-    target,
-    animation,
-    initialState,
-  }: ObserverAnimationProps) {
+  constructor({ selector, animation, initialState }: ObserverAnimationProps) {
     super({
       selector,
       secondarySelectors: {},

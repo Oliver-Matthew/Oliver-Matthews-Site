@@ -5,97 +5,94 @@ import LinkButton from "@/components/common/buttons/link-button";
 import { gsap, useGSAP, SplitType } from "@/utils/gsap";
 
 export default function Pathways() {
-  useGSAP(
-    () => {
-      const pageHeader = new SplitType(".pathways__header", {
-        types: "words",
-      });
+  useGSAP(() => {
+    const pageHeader = new SplitType(".pathways__header", {
+      types: "words",
+    });
 
-      const itemHeader = new SplitType(".careers__pathways__item > h3", {
-        types: "words",
-      });
+    const itemHeader = new SplitType(".careers__pathways__item > h3", {
+      types: "words",
+    });
 
-      const textsLines = gsap.utils.toArray(
-        ".careers__pathways__item > p"
-      ) as HTMLElement[];
+    const textsLines = gsap.utils.toArray(
+      ".careers__pathways__item > p"
+    ) as HTMLElement[];
 
-      pageHeader?.words?.forEach((word) => {
-        gsap.fromTo(
-          word,
-          {
-            y: "100",
-            autoAlpha: 0,
-            skewY: 5,
+    pageHeader?.words?.forEach((word) => {
+      gsap.fromTo(
+        word,
+        {
+          y: "100",
+          autoAlpha: 0,
+          skewY: 5,
+        },
+        {
+          y: "0",
+          skewY: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: word,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none reverse",
           },
-          {
-            y: "0",
-            skewY: 0,
-            autoAlpha: 1,
-            duration: 1,
-            ease: "power1.inOut",
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: word,
-              start: "top bottom",
-              // end: "+=100",
-              toggleActions: "play none none reverse",
-            },
-          }
-        );
-      });
+        }
+      );
+    });
 
-      itemHeader?.words?.forEach((word) => {
-        gsap.fromTo(
-          word,
-          {
-            y: "100",
-            skewY: 5,
-            autoAlpha: 0,
+    itemHeader?.words?.forEach((word) => {
+      gsap.fromTo(
+        word,
+        {
+          y: "100",
+          skewY: 5,
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          skewY: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: word,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
           },
-          {
-            y: "0",
-            skewY: 0,
-            autoAlpha: 1,
-            duration: 1,
-            ease: "power1.inOut",
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: word,
-              start: "top bottom",
-              // end: "+=100",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
+        }
+      );
+    });
 
-      textsLines?.forEach((line) => {
-        gsap.fromTo(
-          line,
-          {
-            y: "100",
-            skewY: "5",
-            autoAlpha: 0,
+    textsLines?.forEach((line) => {
+      gsap.fromTo(
+        line,
+        {
+          y: "100",
+          skewY: "5",
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          skewY: "0",
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.3,
+          scrollTrigger: {
+            trigger: line,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
           },
-          {
-            y: "0",
-            skewY: "0",
-            autoAlpha: 1,
-            duration: 1,
-            ease: "power1.inOut",
-            stagger: 0.3,
-            scrollTrigger: {
-              trigger: line,
-              start: "top bottom",
-              // end: "+=100",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
-    },
-    { scope: ".careers__pathways" }
-  );
+        }
+      );
+    });
+  }, [".careers__pathways"]);
   return (
     <section className="careers__pathways">
       <h2 className="pathways__header">Pathways</h2>
