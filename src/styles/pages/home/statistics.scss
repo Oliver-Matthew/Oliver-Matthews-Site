@@ -32,13 +32,13 @@
       background-color: $color-wild-sand;
       border-radius: 10px;
 
-      &:nth-child(2) {
+      &:nth-child(2n) {
         h2 {
           color: $color-tropical-rain-forest;
         }
       }
 
-      &:nth-child(3) {
+      &:nth-child(3n) {
         h2 {
           color: $color-gray;
         }

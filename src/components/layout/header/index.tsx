@@ -5,7 +5,7 @@ import Link from "next/link";
 import PrimaryButton from "@/components/common/buttons/primary-button";
 import { DropDown } from "@/components/ui/dropdown";
 
-import OliverMatthewsLogo from "@/assets/images/oliver-matthews-logo.jpeg";
+import OliverMatthewsLogo from "@/assets/images/oliver-matthews-logo.png";
 import Image from "next/image";
 import LinkDrawer from "@/components/ui/link-drawer";
 
@@ -61,10 +61,15 @@ export default function Header() {
               <li>
                 <Link href="/#blog-section">Newsletter</Link>
               </li>
+              <li>
+                <Link href="/contact-us">Contact Us</Link>
+              </li>
             </ul>
           </nav>
 
-          <PrimaryButton showArrow>Join Us</PrimaryButton>
+          <PrimaryButton showArrow BUTTON_VARIANT="GREEN">
+            Join Us
+          </PrimaryButton>
         </div>
 
         <div className="header__mobile">
@@ -115,6 +120,12 @@ export default function Header() {
               <li>
                 <Link href="/#blog-section" onClick={() => setOpenMenu(false)}>
                   Newsletter
+                </Link>
+              </li>
+
+              <li>
+                <Link href="/contact-us" onClick={() => setOpenMenu(false)}>
+                  Contact Us
                 </Link>
               </li>
             </ul>

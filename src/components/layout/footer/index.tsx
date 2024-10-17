@@ -3,12 +3,23 @@ import { FaXTwitter } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
 
-import OliverMatthewsLogo from "@/assets/images/oliver-matthews-logo.jpeg";
+import OliverMatthewsLogo from "@/assets/images/oliver-matthews-logo.png";
+import PrimaryButton from "@/components/common/buttons/primary-button";
 
 export default function Footer() {
   return (
     <footer className="footer">
       <div className="footer__wrapper">
+        <div className="footer__form__wrapper">
+          <h3>Contact Us:</h3>
+          <form action="">
+            <input type="mail" placeholder="Enter your email" />
+
+            <textarea name="" id="" placeholder="Enter message"></textarea>
+            <PrimaryButton type="submit">Submit</PrimaryButton>
+          </form>
+        </div>
+
         <div className="footer__top__wrapper">
           <div className="footer__column one">
             <figure>

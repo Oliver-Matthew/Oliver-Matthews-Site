@@ -24,14 +24,13 @@
 
     figure {
       position: relative;
-      width: 4rem;
-      height: 4rem;
-      border-radius: 50px;
+      width: 7rem;
+      aspect-ratio: 1/0.5;
     }
 
     img {
       @extend %cover;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: inherit;
     }
   }
@@ -76,14 +75,13 @@
 
     figure {
       position: relative;
-      width: 5rem;
-      height: 5rem;
-      border-radius: 50px;
+      width: 8rem;
+      aspect-ratio: 1/1;
     }
 
     img {
       @extend %cover;
-      object-fit: cover;
+      object-fit: contain;
       border-radius: inherit;
     }
   }

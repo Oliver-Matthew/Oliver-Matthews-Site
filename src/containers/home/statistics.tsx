@@ -1,7 +1,6 @@
 "use client";
 
-import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+import { gsap, useGSAP } from "@/utils/gsap";
 
 export default function Statistics() {
   function formatNumber(value: number, decimals: number) {
@@ -10,29 +9,32 @@ export default function Statistics() {
       ? s[0] + "." + ((s[1] || "") + "00000000").substring(0, decimals)
       : s[0];
   }
-  useGSAP(() => {
-    const allStats = gsap.utils.toArray(
-      ".statistics__item__number > span"
-    ) as HTMLElement[];
+  useGSAP(
+    () => {
+      const allStats = document.querySelectorAll(
+        ".statistics__item__number > span"
+      );
 
-    allStats.forEach((stat) => {
-      gsap.from(stat, {
-        textContent: "0",
-        duration: 1,
-        ease: "power1.inOut",
-        modifiers: {
-          textContent: (value) => formatNumber(value, 0),
-        },
-        stagger: 0.1,
-        scrollTrigger: {
-          trigger: stat,
-          start: "top bottom",
-          end: "+=100",
-          toggleActions: "play none none reverse",
-        },
+      allStats.forEach((stat) => {
+        gsap.from(stat, {
+          textContent: "0",
+          duration: 1,
+          ease: "power1.inOut",
+          modifiers: {
+            textContent: (value) => formatNumber(value, 0),
+          },
+          stagger: 0.15,
+          scrollTrigger: {
+            trigger: stat,
+            start: "top bottom",
+            end: "+=100",
+            toggleActions: "play none none reverse",
+          },
+        });
       });
-    });
-  }, ["statistics__section"]);
+    },
+    { scope: ".statistics__section" }
+  );
 
   return (
     <section className="statistics__section">

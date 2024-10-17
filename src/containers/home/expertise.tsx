@@ -1,12 +1,51 @@
-import { CustomCSSType } from "@/types/styles";
+"use client";
+
 import Link from "next/link";
+
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
+import SplitType from "split-type";
+
+import { CustomCSSType } from "@/types/styles";
 
 export default function Expertise() {
   const svgColor = "#00674F";
 
+  useGSAP(
+    () => {
+      const header = new SplitType(".expertise__header", { types: "words" });
+
+      header?.words?.forEach((word) => {
+        gsap.fromTo(
+          word,
+          {
+            y: "100",
+            rotate: "30deg",
+            autoAlpha: 0,
+          },
+          {
+            y: "0",
+            rotate: "0deg",
+            autoAlpha: 1,
+            duration: 0.5,
+            ease: "power1.inOut",
+            stagger: 0.1,
+            scrollTrigger: {
+              trigger: word,
+              start: "top bottom",
+              // end: "+=100",
+              toggleActions: "play none none none",
+            },
+          }
+        );
+      });
+    },
+    { scope: ".expertise__section" }
+  );
+
   return (
     <section className="expertise__section">
-      <h2 className="expertise__header">Area of Expertise</h2>
+      <h2 className="expertise__header">Areas of Expertise</h2>
       <div className="expertise__items__wrapper">
         <div style={{ "--svgDelay": 1 } as CustomCSSType}>
           <svg

@@ -1,0 +1,43 @@
+main.contact__us__page {
+  position: relative;
+  width: 100%;
+  gap: 2rem;
+  padding: 3rem 9rem;
+
+  @include media("<tablet") {
+    padding: 4rem 4rem;
+  }
+
+  .title {
+    font-size: clamp(2rem, 4vw, 4rem);
+    font-weight: 700;
+    color: $color-tropical-rain-forest;
+    text-decoration: underline;
+  }
+
+  form {
+    width: min(100%, 500px);
+    margin: 2rem auto 0;
+
+    & > :not(:first-child) {
+      margin: 1.2rem 0 0;
+    }
+
+    input {
+      width: 100%;
+      height: 50px;
+      padding: 0 1rem;
+      border: 1px solid $color-tropical-rain-forest;
+      outline: none;
+      font-size: 1rem;
+    }
+    textarea {
+      width: 100%;
+      min-height: 100px;
+      padding: 1rem;
+      border: 1px solid $color-tropical-rain-forest;
+      outline: none;
+      font-size: 1rem;
+    }
+  }
+}

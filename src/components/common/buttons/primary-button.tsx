@@ -3,7 +3,7 @@ import { BeatLoader } from "react-spinners";
 import clsx from "clsx";
 import { HiArrowLongRight } from "react-icons/hi2";
 
-type BUTTON_VARIANT_TYPE = "PRIMARY" | "SECONDARY" | "GOLD";
+type BUTTON_VARIANT_TYPE = "PRIMARY" | "SECONDARY" | "GREEN";
 type BUTTON_WIDTH_TYPE = "FULL" | "NORMAL";
 
 type ButtonProps = {
@@ -41,7 +41,7 @@ export default function PrimaryButton(props: ButtonProps) {
           disabled__button: disabled,
           normal__button: BUTTON_VARIANT === "PRIMARY",
           secondary__button: BUTTON_VARIANT === "SECONDARY",
-          gold__button: BUTTON_VARIANT === "GOLD",
+          green__button: BUTTON_VARIANT === "GREEN",
           fullWidth: width === "FULL",
         })}
         style={style}
