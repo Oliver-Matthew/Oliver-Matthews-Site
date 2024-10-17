@@ -1,5 +1,3 @@
-import { ObserverAnimation } from "./classes/observer-animation";
-
 export interface SelectorProps {
   selector: string | HTMLElement;
   secondarySelectors: {
@@ -16,7 +14,7 @@ export interface ScrollAnimationProps {
   element: string | HTMLElement;
   animationProps: ScrollTrigger.Vars & ScrollAnimationSettings;
 
-  context: string | HTMLElement;
+  context: string | HTMLElement | null;
 }
 
 export type SecondaryElements = {

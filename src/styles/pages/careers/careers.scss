@@ -104,7 +104,7 @@ main.careers__page {
       @include flex(flex-start, flex-start, column);
       gap: 1rem;
       width: min(49%, 600px);
-      min-height: 38rem;
+      min-height: 45rem;
       padding: 1rem 2rem;
       box-sizing: border-box;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
@@ -120,14 +120,6 @@ main.careers__page {
         @extend %title-20;
         font-weight: 550;
         color: $color-tropical-rain-forest;
-
-        span {
-          display: inline-block;
-          width: 10px;
-          aspect-ratio: 1/1;
-          background-color: $color-tropical-rain-forest;
-          border-radius: 50%;
-        }
       }
 
       p {

@@ -53,9 +53,7 @@ export default function Page() {
 
         <div className="careers__pathways__items">
           <div className="careers__pathways__item">
-            <h3>
-              <span /> Change
-            </h3>
+            <h3>Change</h3>
             <p>
               Are you passionate about driving innovation and making a real
               impact?
@@ -82,6 +80,7 @@ export default function Page() {
             <LinkButton
               href="/careers"
               width="FULL"
+              BUTTON_TYPE="GREEN"
               style={{ minHeight: "4.5rem", minWidth: "12rem" }}
             >
               {" "}
@@ -90,9 +89,7 @@ export default function Page() {
           </div>
 
           <div className="careers__pathways__item">
-            <h3>
-              <span /> Data
-            </h3>
+            <h3>Data</h3>
             <p>
               In the Data Analytics pathway, you&apos;ll dive into complex data
               sets to uncover actionable insights that drive strategic
@@ -110,6 +107,7 @@ export default function Page() {
             <LinkButton
               href="/careers"
               width="FULL"
+              BUTTON_TYPE="GREEN"
               style={{ minHeight: "4.5rem", minWidth: "12rem" }}
             >
               Apply Now
@@ -117,9 +115,7 @@ export default function Page() {
           </div>
 
           <div className="careers__pathways__item">
-            <h3>
-              <span /> Engineering
-            </h3>
+            <h3>Engineering</h3>
             <p>
               As a consultant in our Software Engineering pathway, you&apos;ll
               craft innovative software solutions tailored to our clients&apos;
@@ -139,6 +135,7 @@ export default function Page() {
             <LinkButton
               href="/careers"
               width="FULL"
+              BUTTON_TYPE="GREEN"
               style={{ minHeight: "4.5rem", minWidth: "12rem" }}
             >
               Apply Now
@@ -146,9 +143,7 @@ export default function Page() {
           </div>
 
           <div className="careers__pathways__item">
-            <h3>
-              <span /> Operations
-            </h3>
+            <h3>Operations</h3>
             <p>
               In the IT Operations pathway, you&apos;ll focus on maintaining and
               optimising clients&apos; IT environments to ensure stability and
@@ -164,6 +159,7 @@ export default function Page() {
             <LinkButton
               href="/careers"
               width="FULL"
+              BUTTON_TYPE="GREEN"
               style={{ minHeight: "4.5rem", minWidth: "12rem" }}
             >
               Apply Now

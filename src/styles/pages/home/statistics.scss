@@ -10,8 +10,8 @@
   }
 
   .statistics__items__wrapper {
-    @include flex;
-    justify-content: space-between;
+    width: 100%;
+    @include flex(center, space-around, row wrap);
     gap: 1rem;
     margin: 3rem 0 0;
 
@@ -24,8 +24,9 @@
     }
 
     & > .statistics__item {
-      width: 100%;
+      width: min(100%, 300px);
       @include flex(center, center, column);
+      flex-grow: 1;
       gap: 2rem;
       padding: 2rem;
       background-color: $color-wild-sand;
@@ -46,6 +47,12 @@
       h2 {
         @extend %title-45;
         font-weight: 700;
+
+        span {
+          @extend %title-45;
+          font-weight: 700;
+          color: inherit;
+        }
       }
 
       span {

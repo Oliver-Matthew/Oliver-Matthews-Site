@@ -6,7 +6,7 @@ export default function Expertise() {
 
   return (
     <section className="expertise__section">
-      <h2 className="expertise__header">How We Can Help You</h2>
+      <h2 className="expertise__header">Area of Expertise</h2>
       <div className="expertise__items__wrapper">
         <div style={{ "--svgDelay": 1 } as CustomCSSType}>
           <svg

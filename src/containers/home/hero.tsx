@@ -3,19 +3,28 @@
 import { useRef, createRef } from "react";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
 import { gsap } from "gsap";
+import Image from "next/image";
+
 import { useGSAP } from "@gsap/react";
 
 // import InnovationIcon from "@/assets/images/home/innovation-icon.svg";
 // import { CustomCSSType } from "@/types/styles";
 
 import { heroCarousel } from "@/lib";
-import Image from "next/image";
+import HeroImg from "@/assets/images/home/hero-img.jpg";
 // import PrimaryButton from "@/components/common/buttons/primary-button";
 
 export default function Hero() {
   return (
     <section className="hero__section">
-      <HeroCarousel />
+      {/* <HeroCarousel /> */}
+      <Image
+        src={HeroImg}
+        alt="oliver matthews"
+        width={1440}
+        height={1000}
+        placeholder="blur"
+      />
       <div className="hero__texts">
         <h1>
           Solving Today, <br /> Innovating Tomorrow.
@@ -177,6 +186,7 @@ export function HeroCarousel() {
           ))}
         </div>
       </div>
+
       <div className="hero__slide__navigation">
         <button
           name="left"

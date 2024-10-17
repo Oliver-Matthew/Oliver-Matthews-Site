@@ -4,7 +4,7 @@ import { Component } from "./component";
 
 export class ScrollAnimation extends Component {
   timeline: GSAPTimeline;
-  context: string | HTMLElement;
+  context: string | HTMLElement | null;
 
   constructor({ element, context, animationProps }: ScrollAnimationProps) {
     super({ selector: element, secondarySelectors: {} });
@@ -32,7 +32,7 @@ export class ScrollAnimation extends Component {
 
       // eslint-disable-next-line @typescript-eslint/no-unused-expressions
       props.function && props.function?.(this.timeline);
-    }, this.context); // <- scopes all selector text inside the context to this component (optional, default is document)
+    }, this.context ?? this.element); // <- scopes all selector text inside the context to this component (optional, default is document)
 
     return () => ctx.revert();
   }

@@ -2,10 +2,12 @@
 
 import { Fragment, ReactNode, useCallback, useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 
 import { Interactions } from "@/interactions";
 import Layout from "@/components/layout";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 type Props = {
   children: ReactNode;
@@ -42,6 +44,8 @@ export default function AppProvider({ children }: Props) {
 
     [template]
   );
+
+  gsap.registerPlugin(ScrollTrigger);
 
   return (
     <Fragment>

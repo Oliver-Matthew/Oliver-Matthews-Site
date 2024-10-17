@@ -2,7 +2,7 @@ import { CSSProperties, ReactNode } from "react";
 import clsx from "clsx";
 import Link from "next/link";
 
-type BUTTON_COLOR_TYPE = "PRIMARY" | "SECONDARY";
+type BUTTON_COLOR_TYPE = "PRIMARY" | "SECONDARY" | "GREEN";
 type BUTTON_WIDTH_TYPE = "FULL" | "NORMAL";
 
 type ButtonProps = {
@@ -32,6 +32,7 @@ export default function LinkButton(props: ButtonProps) {
           disabled__button: disabled,
           normal__button: BUTTON_TYPE === "PRIMARY",
           secondary__button: BUTTON_TYPE === "SECONDARY",
+          green__button: BUTTON_TYPE === "GREEN",
           fullWidth: width === "FULL",
         })}
         style={style}
