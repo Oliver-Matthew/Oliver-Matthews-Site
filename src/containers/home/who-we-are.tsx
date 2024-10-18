@@ -13,33 +13,34 @@ export default function WhoWeAre() {
     const textsLines = gsap.utils.toArray(
       ".who__we__are__paragraph"
     ) as HTMLElement[];
+    const sectionImage = document.querySelector(
+      ".who__we__are__image > .image__mask"
+    );
 
-    if (header?.words) {
-      header?.words?.forEach((word) => {
-        gsap.fromTo(
-          word,
-          {
-            y: "100",
-            rotate: "30deg",
-            autoAlpha: 0,
+    header?.words?.forEach((word) => {
+      gsap.fromTo(
+        word,
+        {
+          y: "100",
+          rotate: "30deg",
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          rotate: "0deg",
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: word,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
           },
-          {
-            y: "0",
-            rotate: "0deg",
-            autoAlpha: 1,
-            duration: 0.5,
-            ease: "power1.inOut",
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: word,
-              start: "100px bottom",
-              // end: "+=100",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
-    }
+        }
+      );
+    });
 
     textsLines?.forEach((line) => {
       gsap.fromTo(
@@ -64,6 +65,18 @@ export default function WhoWeAre() {
           },
         }
       );
+    });
+
+    gsap.to(sectionImage, {
+      duration: 1,
+      height: 0,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: sectionImage,
+        start: "100px bottom",
+        // end: "+=100",
+        toggleActions: "play none none none",
+      },
     });
   }, [".who__we__are__section"]);
 
@@ -95,6 +108,7 @@ export default function WhoWeAre() {
       </div>
 
       <figure className="who__we__are__image">
+        <div className="image__mask" />
         <Image
           src={AboutUsImg}
           width={400}

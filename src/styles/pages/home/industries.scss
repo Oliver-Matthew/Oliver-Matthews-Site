@@ -1,0 +1,71 @@
+.industries__section {
+  position: relative;
+  width: 100%;
+  gap: 2rem;
+  padding: 4rem 9rem;
+  overflow: hidden;
+
+  @include media("<tablet") {
+    padding: 5rem 4rem;
+  }
+
+  .industries__header {
+    @extend %title-30;
+    font-weight: 600;
+    color: $color-tropical-rain-forest;
+    font-kerning: none;
+    overflow: hidden;
+  }
+
+  .industries__items__wrapper {
+    @include flex(center, space-between, row wrap);
+    gap: 1rem;
+    margin: 3rem 0 0;
+
+    // @include media("<tablet") {
+    //   justify-content: center;
+    // }
+
+    // @include media("<phone") {
+    //   flex-flow: row wrap;
+    // }
+
+    & > div {
+      width: min(32%, 350px);
+      min-height: 300px;
+      @include flex(flex-start, space-between, column);
+      gap: 2rem;
+      padding: 2rem;
+      background-color: $color-wild-sand;
+
+      @include media("<phone") {
+        width: min(100%, 400px);
+      }
+
+      svg {
+        width: 100px;
+        height: 100px;
+        // fill: $color-tropical-rain-forest;
+        fill: none;
+        stroke: $color-tropical-rain-forest;
+        stroke-width: 10px;
+        // stroke-dasharray: 1000;
+        // stroke-dashoffset: 1000;
+        animation: svgStrokeRun 7s linear infinite;
+        animation-delay: calc(var(--svgDelay) * 1s);
+      }
+
+      span {
+        @extend %title-20;
+        font-weight: 600;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@keyframes svgStrokeRun {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

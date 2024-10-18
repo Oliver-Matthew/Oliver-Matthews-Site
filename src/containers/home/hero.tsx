@@ -2,10 +2,9 @@
 
 import { useRef, createRef } from "react";
 import { MdKeyboardArrowRight, MdKeyboardArrowLeft } from "react-icons/md";
-import { gsap } from "gsap";
 import Image from "next/image";
 
-import { useGSAP } from "@gsap/react";
+import { gsap, useGSAP, SplitType } from "@/utils/gsap";
 
 // import InnovationIcon from "@/assets/images/home/innovation-icon.svg";
 // import { CustomCSSType } from "@/types/styles";
@@ -15,6 +14,35 @@ import HeroImg from "@/assets/images/home/hero-img.jpg";
 // import PrimaryButton from "@/components/common/buttons/primary-button";
 
 export default function Hero() {
+  useGSAP(() => {
+    const header = new SplitType(".hero__texts > h1", { types: "words" });
+
+    header.words?.forEach((word) => {
+      gsap.fromTo(
+        word,
+        {
+          y: "100",
+          skewY: 5,
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          skewY: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: word,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+  }, [".hero__section"]);
+
   return (
     <section className="hero__section">
       {/* <HeroCarousel /> */}
@@ -26,9 +54,8 @@ export default function Hero() {
         placeholder="blur"
       />
       <div className="hero__texts">
-        <h1>
-          Solving Today, <br /> Innovating Tomorrow.
-        </h1>
+        <h1>Solving Today,</h1>
+        <h1>Innovating Tomorrow.</h1>
       </div>
     </section>
   );

@@ -3,7 +3,7 @@
   padding: 6rem 9rem;
 
   @include media("<tablet") {
-    padding: 3rem 4rem;
+    padding: 5rem 4rem;
   }
 
   .our__values__header {
@@ -33,9 +33,9 @@
         width: min(100%, 500px);
       }
 
-      & > hr {
-        width: 90%;
-        height: 3px;
+      & > .horizontal__line {
+        width: 80%;
+        height: 2px;
         background-color: $color-tropical-rain-forest;
       }
 
@@ -62,6 +62,8 @@
           width: 3.1rem;
           height: 3.1rem;
           fill: $color-tropical-rain-forest;
+          stroke-dasharray: 3000;
+          stroke-dashoffset: 3000;
         }
       }
 

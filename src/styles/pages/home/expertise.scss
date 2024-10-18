@@ -13,29 +13,34 @@
     @extend %title-30;
     font-weight: 600;
     color: $color-tropical-rain-forest;
+    font-kerning: none;
     overflow: hidden;
   }
 
   .expertise__items__wrapper {
-    @include flex;
-    justify-content: space-between;
+    @include flex(center, center, row wrap);
     gap: 1rem;
     margin: 3rem 0 0;
 
-    @include media("<tablet") {
-      justify-content: center;
-    }
+    // @include media("<tablet") {
+    //   justify-content: center;
+    // }
 
-    @include media("<phone") {
-      flex-flow: row wrap;
-    }
+    // @include media("<phone") {
+    //   flex-flow: row wrap;
+    // }
 
     & > div {
-      width: 100%;
+      width: min(49%, 500px);
       @include flex(center, flex-start, column);
       gap: 2rem;
       padding: 2rem;
-      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      border: 0.5px solid $color-tropical-rain-forest;
+
+      @include media("<phone") {
+        width: min(100%, 500px);
+      }
 
       svg {
         fill: $color-luxor-gold;

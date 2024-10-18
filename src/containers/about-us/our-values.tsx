@@ -22,17 +22,15 @@ export default function OurValues() {
       types: "words",
     });
     const longLines = gsap.utils.toArray(
-      ".value__item__wrapper > hr"
+      ".value__item__wrapper > .horizontal__line"
     ) as HTMLElement[];
+    const valueSvgPaths = gsap.utils.toArray(
+      ".value__icon__wrapper > svg > path"
+    ) as SVGPathElement[];
     const valuesHeaders = gsap.utils.toArray(
       ".value__item__wrapper > h3"
     ) as HTMLElement[];
-    const valuesHeadersChar = valuesHeaders?.map((header) => {
-      const headerChars = new SplitType(header, {
-        types: "chars",
-      });
-      return headerChars.chars;
-    });
+
     const textsLines = new SplitType(".value__item__text > p", {
       types: "lines",
     });
@@ -62,55 +60,74 @@ export default function OurValues() {
       );
     });
 
-    if (longLines) {
-      longLines.forEach((item) => {
-        gsap.from(item, {
+    longLines.forEach((item) => {
+      gsap.from(item, {
+        width: "0",
+        duration: 1,
+        ease: "power1.inOut",
+        stagger: 0.15,
+        scrollTrigger: {
+          trigger: item,
+          start: "top bottom",
+          end: "+=100",
+          toggleActions: "play none none none",
+        },
+      });
+    });
+
+    valueSvgPaths.forEach((path) => {
+      const pathLength = path.getTotalLength();
+
+      gsap.fromTo(
+        path,
+        {
+          strokeDashoffset: pathLength,
+          strokeDasharray: `${pathLength} ${pathLength}`,
+        },
+        {
+          strokeDashoffset: pathLength,
+          strokeDasharray: `${pathLength} ${pathLength}`,
           width: "0",
           duration: 1,
           ease: "power1.inOut",
-          stagger: 0.15,
           scrollTrigger: {
-            trigger: item,
+            trigger: path,
             start: "top bottom",
             end: "+=100",
             toggleActions: "play none none none",
           },
-        });
-      });
-    }
+        }
+      );
+    });
 
-    valuesHeadersChar?.forEach((word) => {
-      word?.forEach((char) => {
-        gsap.fromTo(
-          char,
-          {
-            y: "100",
-            skewY: 5,
-            autoAlpha: 0,
+    valuesHeaders?.forEach((word) => {
+      gsap.fromTo(
+        word,
+        {
+          y: "100",
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: word,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
           },
-          {
-            y: "0",
-            skewY: 0,
-            autoAlpha: 1,
-            duration: 1,
-            ease: "power1.inOut",
-            stagger: 0.1,
-            scrollTrigger: {
-              trigger: word,
-              start: "100px bottom",
-              // end: "+=100",
-              toggleActions: "play none none none",
-            },
-          }
-        );
-      });
+        }
+      );
     });
 
     textsLines?.lines?.forEach((line) => {
       gsap.fromTo(
         line,
         {
-          y: "50",
+          y: "100",
           skewY: "5",
           autoAlpha: 0,
         },
@@ -120,7 +137,7 @@ export default function OurValues() {
           autoAlpha: 1,
           duration: 1,
           ease: "power1.inOut",
-          stagger: 0.3,
+          stagger: 0.1,
           scrollTrigger: {
             trigger: line,
             start: "top bottom",
@@ -138,16 +155,7 @@ export default function OurValues() {
 
       <div className="values__wrapper">
         <div className="value__item__wrapper">
-          {/* <figure className="value__item__image">
-            <Image
-              src={CuriousityImg}
-              width={600}
-              height={400}
-              alt="curiousity"
-              placeholder="blur"
-            />
-          </figure> */}
-          <hr />
+          <div className="horizontal__line" />
           <div className="value__icon__wrapper">
             <FaMagnifyingGlass />
           </div>
@@ -170,16 +178,7 @@ export default function OurValues() {
         </div>
 
         <div className="value__item__wrapper">
-          {/* <figure className="value__item__image">
-            <Image
-              src={IndividualityImg}
-              width={600}
-              height={400}
-              alt="individuality"
-              placeholder="blur"
-            />
-          </figure> */}
-          <hr />
+          <div className="horizontal__line" />
           <div className="value__icon__wrapper">
             <FaPersonCircleCheck />
           </div>
@@ -199,16 +198,7 @@ export default function OurValues() {
         </div>
 
         <div className="value__item__wrapper">
-          {/* <figure className="value__item__image">
-            <Image
-              src={TogethernessImg}
-              width={600}
-              height={400}
-              alt="togetherness"
-              placeholder="blur"
-            />
-          </figure> */}
-          <hr />
+          <div className="horizontal__line" />
           <div className="value__icon__wrapper">
             <FaPeopleCarry />
           </div>
@@ -229,16 +219,7 @@ export default function OurValues() {
         </div>
 
         <div className="value__item__wrapper">
-          {/* <figure className="value__item__image">
-            <Image
-              src={IntegrityImg}
-              width={600}
-              height={400}
-              alt="integrity"
-              placeholder="blur"
-            />
-          </figure> */}
-          <hr />
+          <div className="horizontal__line" />
           <div className="value__icon__wrapper">
             <GoLaw />
           </div>
@@ -259,16 +240,7 @@ export default function OurValues() {
         </div>
 
         <div className="value__item__wrapper">
-          {/* <figure className="value__item__image">
-            <Image
-              src={OwnershipImg}
-              width={600}
-              height={400}
-              alt="ownership"
-              placeholder="blur"
-            />
-          </figure> */}
-          <hr />
+          <div className="horizontal__line" />
           <div className="value__icon__wrapper">
             <FaBriefcase />
           </div>

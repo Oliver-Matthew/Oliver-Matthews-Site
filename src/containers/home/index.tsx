@@ -5,7 +5,8 @@ const WhoWeAre = dynamic(() => import("./who-we-are"));
 const Expertise = dynamic(() => import("./expertise"));
 const Statistics = dynamic(() => import("./statistics"));
 const Testimonials = dynamic(() => import("./testimonials"));
-const Clients = dynamic(() => import("./clients"));
+const Industries = dynamic(() => import("./industries"));
+// const Clients = dynamic(() => import("./clients"));
 const Blog = dynamic(() => import("./blog"));
 
 export default function Home() {
@@ -16,7 +17,8 @@ export default function Home() {
       <Expertise />
       <Statistics />
       <Testimonials />
-      <Clients />
+      <Industries />
+      {/* <Clients /> */}
       <Blog />
     </main>
   );

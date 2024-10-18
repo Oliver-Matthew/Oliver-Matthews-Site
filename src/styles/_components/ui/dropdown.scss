@@ -17,8 +17,8 @@
 
   .dropdown__container {
     position: absolute;
-    top: 0%;
-    right: 100%;
+    top: 100%;
+    left: 0;
     min-width: 14.4rem;
     padding: 0.5rem;
     max-height: 0px;
@@ -27,12 +27,6 @@
     z-index: 0;
     visibility: hidden;
     transition: opacity 300ms ease-in-out, max-height 600ms ease-in-out;
-
-    @media (min-width: 769px) {
-      top: 100%;
-      left: 0;
-      right: unset;
-    }
 
     &.open {
       max-height: 999px;

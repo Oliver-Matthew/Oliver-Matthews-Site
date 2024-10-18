@@ -74,7 +74,7 @@ main {
 
 .image__mask {
   @extend %cover;
-  background-color: $color-tropical-rain-forest;
+  background-color: $color-gray;
   border-radius: inherit;
   z-index: z("level-two");
 }

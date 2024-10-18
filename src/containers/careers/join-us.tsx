@@ -75,18 +75,17 @@ export default function JoinUs() {
       gsap.fromTo(
         line,
         {
-          y: "50",
-          skewY: "5",
+          y: "100",
+          rotate: "5deg",
           autoAlpha: 0,
         },
         {
           y: "0",
-          skewY: "0",
+          rotate: "0deg",
           autoAlpha: 1,
           duration: 1,
           ease: "power1.inOut",
           stagger: 0.3,
-          delay: 0.4,
           scrollTrigger: {
             trigger: line,
             start: "top bottom",
@@ -100,7 +99,6 @@ export default function JoinUs() {
     gsap.to(joinusImage, {
       duration: 1,
       height: 0,
-      delay: 0.6,
       ease: "power3.out",
       scrollTrigger: {
         trigger: joinusImage,
