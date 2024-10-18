@@ -15,6 +15,7 @@ const aboutusLinks = [
 ];
 
 const servicesLinks = [
+  { link: "/services", external: false, name: "Services" },
   { link: "/change-service", external: false, name: "Change " },
   { link: "/data-service", external: false, name: "Data " },
   {
@@ -59,7 +60,7 @@ export default function Header() {
                 <Link href="/careers">Careers</Link>
               </li>
               <li>
-                <Link href="/#blog-section">Newsletter</Link>
+                <Link href="/newsletter">Newsletter</Link>
               </li>
               <li>
                 <Link href="/contact-us">Contact Us</Link>
@@ -118,7 +119,7 @@ export default function Header() {
               </li>
 
               <li>
-                <Link href="/#blog-section" onClick={() => setOpenMenu(false)}>
+                <Link href="/newsletter" onClick={() => setOpenMenu(false)}>
                   Newsletter
                 </Link>
               </li>

@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Page() {
+export default function DataService() {
   return (
     <main className="data__service__page">
-      <h2 className="data__service__page__header ">Data As A Service</h2>
+      <h2 className="data__service__page__header ">Data</h2>
 
       <div className="data__service__content">
         <p>

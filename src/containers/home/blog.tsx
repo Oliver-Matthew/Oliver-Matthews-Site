@@ -10,7 +10,7 @@ export default function Blog() {
     <section className="blog__section" id="blog-section">
       <h2 className="blog__header">Blog</h2>
       <div className="blog__posts__wrapper">
-        {Array.from({ length: 6 }, (_, index) => {
+        {Array.from({ length: 3 }, (_, index) => {
           return (
             <div className="blog__item" key={index}>
               <figure className="blog__item__image">

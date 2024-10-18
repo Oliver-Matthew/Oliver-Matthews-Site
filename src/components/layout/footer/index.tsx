@@ -17,7 +17,7 @@ export default function Footer() {
             <input type="mail" placeholder="Enter your email" />
 
             <textarea name="" id="" placeholder="Enter message"></textarea>
-            <PrimaryButton type="submit" width="FULL">
+            <PrimaryButton type="submit" width="FULL" BUTTON_VARIANT="GREEN">
               Submit
             </PrimaryButton>
           </form>

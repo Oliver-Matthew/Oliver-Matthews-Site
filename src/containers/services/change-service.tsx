@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Page() {
+export default function ChangeService() {
   return (
     <main className="change__service__page">
-      <h2 className="change__service__page__header ">Change As A Service</h2>
+      <h2 className="change__service__page__header ">Change</h2>
 
       <div className="change__service__content">
         <p>

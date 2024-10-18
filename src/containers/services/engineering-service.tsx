@@ -1,11 +1,9 @@
 import React from "react";
 
-export default function Page() {
+export default function EngineeringService() {
   return (
     <main className="engineering__service__page">
-      <h2 className="engineering__service__page__header ">
-        Engineering As A Service
-      </h2>
+      <h2 className="engineering__service__page__header ">Engineering</h2>
 
       <div className="engineering__service__content">
         <p>

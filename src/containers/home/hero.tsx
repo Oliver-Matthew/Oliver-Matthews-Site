@@ -36,7 +36,7 @@ export default function Hero() {
             trigger: word,
             start: "top bottom",
             // end: "+=100",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
           },
         }
       );

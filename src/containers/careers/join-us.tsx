@@ -6,11 +6,11 @@ import JoinUsImg from "@/assets/images/careers/join-us-img.jpg";
 export default function JoinUs() {
   useGSAP(() => {
     const pageHeader = new SplitType(".join__us__header", {
-      types: "chars",
+      types: "words",
     });
 
     const sectionHeader = new SplitType(".join__us__text > h3", {
-      types: "chars",
+      types: "words",
     });
 
     const textsLines = new SplitType(".join__us__text > p", {
@@ -21,7 +21,7 @@ export default function JoinUs() {
       ".join__us__image > .image__mask"
     );
 
-    pageHeader?.chars?.forEach((word) => {
+    pageHeader?.words?.forEach((word) => {
       gsap.fromTo(
         word,
         {
@@ -46,7 +46,7 @@ export default function JoinUs() {
       );
     });
 
-    sectionHeader?.chars?.forEach((word) => {
+    sectionHeader?.words?.forEach((word) => {
       gsap.fromTo(
         word,
         {
@@ -85,7 +85,7 @@ export default function JoinUs() {
           autoAlpha: 1,
           duration: 1,
           ease: "power1.inOut",
-          stagger: 0.3,
+          stagger: 0.1,
           scrollTrigger: {
             trigger: line,
             start: "top bottom",

@@ -101,6 +101,7 @@ export default function WhoWeAre() {
         <LinkButton
           href="/about-us"
           style={{ minHeight: "4.5rem", minWidth: "12rem" }}
+          BUTTON_TYPE="GREEN"
         >
           {" "}
           Learn More

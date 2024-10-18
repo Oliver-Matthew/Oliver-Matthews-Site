@@ -1,10 +1,147 @@
+"use client";
 import LinkButton from "@/components/common/buttons/link-button";
-import React from "react";
+
+import { gsap, useGSAP, SplitType } from "@/utils/gsap";
 
 export default function Services() {
   const svgColor = "#00674F";
   const svgWidth = "256";
   const svgHeight = "256";
+
+  useGSAP(() => {
+    const header = new SplitType(".services__page__header", { types: "words" });
+    const svgPaths = gsap.utils.toArray(
+      ".services__svg__item > svg > path"
+    ) as SVGPathElement[];
+    const itemHeaders = new SplitType(".services__item__text > h3", {
+      types: "words",
+    });
+    const itemParagraphs = gsap.utils.toArray(
+      ".services__item__text > p"
+    ) as HTMLElement[];
+    const itemButtons = gsap.utils.toArray(
+      ".services__item__text > a"
+    ) as HTMLAnchorElement[];
+
+    header.words?.forEach((word) => {
+      gsap.fromTo(
+        word,
+        {
+          y: "100",
+          skewY: 5,
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          skewY: 0,
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: word,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    svgPaths.forEach((path) => {
+      const pathLength = path.getTotalLength();
+      gsap.fromTo(
+        path,
+        {
+          strokeDashoffset: pathLength,
+          strokeDasharray: `${pathLength} ${pathLength}`,
+        },
+        {
+          strokeDashoffset: 0,
+          strokeDasharray: `${pathLength} ${pathLength}`,
+          duration: 2,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: path,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none reverse",
+          },
+        }
+      );
+    });
+
+    itemHeaders.words?.forEach((item) => {
+      gsap.fromTo(
+        item,
+        {
+          y: "100",
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    itemParagraphs.forEach((item) => {
+      gsap.fromTo(
+        item,
+        {
+          y: "100",
+          skewY: "5",
+          autoAlpha: 0,
+        },
+        {
+          y: "0",
+          skewY: "0",
+          autoAlpha: 1,
+          duration: 1,
+          ease: "power1.inOut",
+          stagger: 0.1,
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+
+    itemButtons.forEach((item) => {
+      gsap.fromTo(
+        item,
+        {
+          xPercent: 100,
+          autoAlpha: 0,
+        },
+        {
+          xPercent: 0,
+          autoAlpha: 1,
+          duration: 1,
+          // ease: "power4.in",
+          scrollTrigger: {
+            trigger: item,
+            start: "top bottom",
+            // end: "+=100",
+            toggleActions: "play none none none",
+          },
+        }
+      );
+    });
+  }, [".services__page"]);
 
   return (
     <main className="services__page">
@@ -63,6 +200,7 @@ export default function Services() {
 
           <div className="services__item__text">
             <h3>Change</h3>
+
             <p>
               At Oliver & Matthews, we specialize in driving successful business
               change and transformation.
@@ -75,6 +213,7 @@ export default function Services() {
             <LinkButton
               href="/change-service"
               style={{ minHeight: "4.5rem", minWidth: "12rem" }}
+              BUTTON_TYPE="GREEN"
             >
               Read More
             </LinkButton>
@@ -140,6 +279,7 @@ export default function Services() {
             <LinkButton
               href="/data-service"
               style={{ minHeight: "4.5rem", minWidth: "12rem" }}
+              BUTTON_TYPE="GREEN"
             >
               Read More
             </LinkButton>
@@ -221,6 +361,7 @@ export default function Services() {
             <LinkButton
               href="/operations-service"
               style={{ minHeight: "4.5rem", minWidth: "12rem" }}
+              BUTTON_TYPE="GREEN"
             >
               Read More
             </LinkButton>
@@ -317,6 +458,7 @@ export default function Services() {
             <LinkButton
               href="/engineering-service"
               style={{ minHeight: "4.5rem", minWidth: "12rem" }}
+              BUTTON_TYPE="GREEN"
             >
               Read More
             </LinkButton>
