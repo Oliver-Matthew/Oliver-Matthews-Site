@@ -3,31 +3,45 @@ footer.footer {
 
   .footer__wrapper {
     padding: 4rem 2rem 2rem;
-    border-top: 1px solid $color-black;
+    border-top: 0.5px solid $color-tropical-rain-forest;
     // background-color: $color-gray;
   }
 
   .footer__form__wrapper {
+    position: relative;
     width: 100%;
     margin: 0 auto 2rem;
-    @include flex(flex-start, center, row wrap);
+    @include flex(center, center, column);
     gap: 2rem;
 
     @include media("<phone") {
       flex-flow: column;
     }
 
+    & > h2 {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0);
+      font-size: 12rem;
+      text-align: start;
+      color: $color-tropical-rain-forest;
+      opacity: 0.3;
+    }
+
     & > h3 {
       text-align: start;
-      @extend %title-20;
+      @extend %description-16;
       font-weight: 600;
-      color: $color-tropical-rain-forest;
+      // color: $color-tropical-rain-forest;
     }
 
     & > form {
       @include flex(flex-start, flex-start, column);
       gap: 2rem;
       width: min(25rem, 400px);
+      isolation: isolate;
+      background-color: transparent;
 
       input {
         border-bottom: 1px solid $color-black;
@@ -35,6 +49,13 @@ footer.footer {
         width: 100%;
         height: 3.5rem;
         color: $color-black;
+        font-weight: 500;
+        background-color: inherit;
+
+        &::placeholder {
+          font-weight: 500;
+          color: $color-black;
+        }
       }
 
       textarea {
@@ -43,6 +64,13 @@ footer.footer {
         width: 100%;
         min-height: 10rem;
         color: $color-black;
+        font-weight: 500;
+        background-color: inherit;
+
+        &::placeholder {
+          font-weight: 500;
+          color: $color-black;
+        }
       }
     }
   }

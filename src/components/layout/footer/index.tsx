@@ -11,12 +11,15 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer__wrapper">
         <div className="footer__form__wrapper">
-          <h3>Contact Us:</h3>
+          <h2>Contact</h2>
+          <h3>Let us know what you think:</h3>
           <form action="">
             <input type="mail" placeholder="Enter your email" />
 
             <textarea name="" id="" placeholder="Enter message"></textarea>
-            <PrimaryButton type="submit">Submit</PrimaryButton>
+            <PrimaryButton type="submit" width="FULL">
+              Submit
+            </PrimaryButton>
           </form>
         </div>
 
