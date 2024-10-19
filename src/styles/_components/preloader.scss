@@ -53,6 +53,7 @@
 
     p {
       transform: translateY(50px);
+      font-family: $font-ginger;
     }
 
     @include media("<phone") {
