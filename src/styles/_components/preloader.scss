@@ -10,8 +10,7 @@
   color: $color-white;
   z-index: 999999;
   padding: 0 5rem;
-  cursor: none;
-  touch-action: none;
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 
   .preloader__line {
     position: absolute;
@@ -38,6 +37,11 @@
     @include media("<phone") {
       left: 1rem;
     }
+
+    span {
+      display: inline-block;
+      @extend %title-30;
+    }
   }
   .preloader__number {
     position: absolute;
@@ -46,6 +50,12 @@
     right: 2rem;
     @extend %title-20;
     overflow: hidden;
+    width: 100px;
+    height: 50px;
+
+    p {
+      transform: translateY(50px);
+    }
 
     @include media("<phone") {
       right: 1rem;
