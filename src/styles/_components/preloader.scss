@@ -29,13 +29,14 @@
 
   .preloader__text {
     position: absolute;
-    bottom: 5rem;
-    left: 2rem;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     overflow: hidden;
 
     span {
       display: inline-block;
-      @extend %title-45;
+      @extend %title-30;
       font-family: $font-ginger;
       margin-right: 0.5rem;
     }
