@@ -5,11 +5,10 @@ import JoinUsImg from "@/assets/images/careers/join-us-img.jpg";
 
 export default function JoinUs() {
   useGSAP(() => {
-    const pageHeader = new SplitType(".join__us__header", {
+    new SplitType(".join__us__header", {
       types: "words",
     });
-
-    const sectionHeader = new SplitType(".join__us__text > h3", {
+    new SplitType(".join__us__text > h3", {
       types: "words",
     });
 
@@ -21,55 +20,53 @@ export default function JoinUs() {
       ".join__us__image > .image__mask"
     );
 
-    pageHeader?.words?.forEach((word) => {
-      gsap.fromTo(
-        word,
-        {
-          y: "100",
-          skewY: 5,
-          autoAlpha: 0,
+    gsap.fromTo(
+      ".join__us__header > div",
+      {
+        y: "100",
+        skewY: 5,
+        autoAlpha: 0,
+      },
+      {
+        y: "0",
+        skewY: 0,
+        autoAlpha: 1,
+        duration: 1,
+        ease: "power1.inOut",
+        stagger: 0.2,
+        scrollTrigger: {
+          trigger: ".join__us__header ",
+          start: "top bottom",
+          // end: "+=100",
+          toggleActions: "play none none none",
         },
-        {
-          y: "0",
-          skewY: 0,
-          autoAlpha: 1,
-          duration: 1,
-          ease: "power1.inOut",
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: word,
-            start: "top bottom",
-            // end: "+=100",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-
-    sectionHeader?.words?.forEach((word) => {
-      gsap.fromTo(
-        word,
-        {
-          y: "100",
-          skewY: 5,
-          autoAlpha: 0,
+        onComplete: () => {
+          console.log("done");
         },
-        {
-          y: "0",
-          skewY: 0,
-          autoAlpha: 1,
-          duration: 1,
-          ease: "power1.inOut",
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: word,
-            start: "top bottom",
-            // end: "+=100",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
+      }
+    );
+    gsap.fromTo(
+      ".join__us__text > h3 > div",
+      {
+        y: "100",
+        skewY: 5,
+        autoAlpha: 0,
+      },
+      {
+        y: "0",
+        skewY: 0,
+        autoAlpha: 1,
+        duration: 1,
+        ease: "power1.inOut",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".join__us__text > h3",
+          start: "top bottom",
+          // end: "+=100",
+          toggleActions: "play none none none",
+        },
+      }
+    );
 
     textsLines?.lines?.forEach((line) => {
       gsap.fromTo(

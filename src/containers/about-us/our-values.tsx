@@ -12,15 +12,13 @@ import { gsap, useGSAP, SplitType } from "@/utils/gsap";
 
 export default function OurValues() {
   useGSAP(() => {
-    const sectionHeader = new SplitType(".our__values__header", {
+    new SplitType(".our__values__header", {
       types: "words",
     });
     const longLines = gsap.utils.toArray(
       ".value__item__wrapper > .horizontal__line"
     ) as HTMLElement[];
-    const valueSvgPaths = gsap.utils.toArray(
-      ".value__icon__wrapper > svg > path"
-    ) as SVGPathElement[];
+
     const valuesHeaders = gsap.utils.toArray(
       ".value__item__wrapper > h3"
     ) as HTMLElement[];
@@ -29,30 +27,28 @@ export default function OurValues() {
       types: "lines",
     });
 
-    sectionHeader?.words?.forEach((word) => {
-      gsap.fromTo(
-        word,
-        {
-          y: "100",
-          skewY: 5,
-          autoAlpha: 0,
+    gsap.fromTo(
+      ".our__values__header > div",
+      {
+        y: "100",
+        skewY: 5,
+        autoAlpha: 0,
+      },
+      {
+        y: "0",
+        skewY: 0,
+        autoAlpha: 1,
+        duration: 1,
+        ease: "power1.inOut",
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: ".our__values__header",
+          start: "100px bottom",
+          // end: "+=100",
+          toggleActions: "play none none none",
         },
-        {
-          y: "0",
-          skewY: 0,
-          autoAlpha: 1,
-          duration: 1,
-          ease: "power1.inOut",
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: word,
-            start: "100px bottom",
-            // end: "+=100",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
+      }
+    );
 
     longLines.forEach((item) => {
       gsap.from(item, {
@@ -69,40 +65,17 @@ export default function OurValues() {
       });
     });
 
-    valueSvgPaths.forEach((path) => {
-      const pathLength = path.getTotalLength();
-
-      gsap.fromTo(
-        path,
-        {
-          strokeDashoffset: pathLength,
-          strokeDasharray: `${pathLength} ${pathLength}`,
-        },
-        {
-          strokeDashoffset: pathLength,
-          strokeDasharray: `${pathLength} ${pathLength}`,
-          width: "0",
-          duration: 1,
-          ease: "power1.inOut",
-          scrollTrigger: {
-            trigger: path,
-            start: "top bottom",
-            end: "+=100",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-
     valuesHeaders?.forEach((word) => {
       gsap.fromTo(
         word,
         {
           y: "100",
+          skewY: 5,
           autoAlpha: 0,
         },
         {
           y: "0",
+          skewY: 0,
           autoAlpha: 1,
           duration: 1,
           ease: "power1.inOut",
