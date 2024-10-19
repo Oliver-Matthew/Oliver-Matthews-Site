@@ -10,12 +10,6 @@ import { GoLaw } from "react-icons/go";
 
 import { gsap, useGSAP, SplitType } from "@/utils/gsap";
 
-// import CuriousityImg from "@/assets/images/about-us/curiousity.jpg";
-// import IndividualityImg from "@/assets/images/about-us/individuality.jpg";
-// import TogethernessImg from "@/assets/images/about-us/togetherness.jpg";
-// import IntegrityImg from "@/assets/images/about-us/integrity.jpg";
-// import OwnershipImg from "@/assets/images/about-us/ownnership.jpg";
-
 export default function OurValues() {
   useGSAP(() => {
     const sectionHeader = new SplitType(".our__values__header", {

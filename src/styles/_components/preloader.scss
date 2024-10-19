@@ -29,18 +29,15 @@
 
   .preloader__text {
     position: absolute;
-    bottom: 3rem;
+    bottom: 5rem;
     left: 2rem;
-    @extend %title-30;
     overflow: hidden;
-
-    @include media("<phone") {
-      left: 1rem;
-    }
 
     span {
       display: inline-block;
-      @extend %title-30;
+      @extend %title-45;
+      font-family: $font-ginger;
+      margin-right: 0.5rem;
     }
   }
   .preloader__number {

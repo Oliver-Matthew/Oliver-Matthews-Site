@@ -26,7 +26,7 @@ export default function Preloader() {
             {
               y: "-200",
               skewY: 5,
-              delay: 1,
+              delay: 1.5,
               autoAlpha: 0,
               duration: 1.5,
               ease: "power1.inOut",
@@ -58,8 +58,8 @@ export default function Preloader() {
         }
       );
       gsap.to(".preloader__text > span", {
-        // y: "300",
-        // skewY: 5,
+        y: "300",
+        skewY: 5,
         autoAlpha: 0,
         duration: 1.5,
         ease: "power1.inOut",
