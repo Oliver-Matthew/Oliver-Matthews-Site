@@ -22,7 +22,7 @@ export default function Preloader() {
       }
     }
     function load() {
-      images.forEach((_) => {
+      images.forEach(() => {
         onImagesLoaded();
       });
     }
