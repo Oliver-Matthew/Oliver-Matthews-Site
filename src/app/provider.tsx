@@ -39,11 +39,10 @@ export default function AppProvider({ children }: Props) {
     getTemplate();
   }, [getTemplate]);
 
-  useGSAP(
-    () => new Interactions({ template: template }),
-
-    [template]
-  );
+  useGSAP(() => {
+    new Interactions({ template: template });
+    window.scrollTo(0, 0);
+  }, [template]);
 
   gsap.registerPlugin(ScrollTrigger);
 
