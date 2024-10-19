@@ -1,0 +1,23 @@
+.newsletter__page {
+  min-height: 60vh;
+  width: 100%;
+  @include flex;
+
+  h2 {
+    @extend %title-45;
+    font-weight: 600;
+    color: $color-tropical-rain-forest;
+    isolation: isolate;
+  }
+
+  .icon__wrapper {
+    position: absolute;
+    opacity: 0.2;
+
+    svg {
+      width: 20rem;
+      height: 20rem;
+      fill: $color-tropical-rain-forest;
+    }
+  }
+}
