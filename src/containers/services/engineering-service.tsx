@@ -15,7 +15,7 @@ export default function EngineeringService() {
     ) as HTMLElement[];
 
     gsap.from(".engineering__service__image > img", {
-      scale: 1.7,
+      width: 0,
       duration: 1,
       ease: "power1.inOut",
       scrollTrigger: {

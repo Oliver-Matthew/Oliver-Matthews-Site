@@ -1,5 +1,4 @@
 "use client";
-
 import Image from "next/image";
 
 import { gsap, useGSAP, SplitType } from "@/utils/gsap";
@@ -15,7 +14,7 @@ export default function ChangeService() {
     ) as HTMLElement[];
 
     gsap.from(".change__service__image > img", {
-      scale: 1.7,
+      width: 0,
       duration: 1,
       ease: "power1.inOut",
       scrollTrigger: {
