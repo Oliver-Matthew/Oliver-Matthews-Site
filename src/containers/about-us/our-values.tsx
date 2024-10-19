@@ -40,12 +40,12 @@ export default function OurValues() {
         word,
         {
           y: "100",
-          rotate: "30deg",
+          skewY: 5,
           autoAlpha: 0,
         },
         {
           y: "0",
-          rotate: "0deg",
+          skewY: 0,
           autoAlpha: 1,
           duration: 1,
           ease: "power1.inOut",
