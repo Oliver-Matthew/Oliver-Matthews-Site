@@ -17,6 +17,8 @@
 @import "_base/globals";
 
 // ------------------------- components----------------------------------
+
+@import "./_components/preloader";
 // layout
 @import "_components/layout/header/header";
 @import "_components/layout/footer/footer";

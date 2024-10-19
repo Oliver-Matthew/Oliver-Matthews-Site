@@ -1,34 +1,54 @@
 .preloader {
   @extend %cover;
   @extend %center;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   text-align: center;
   background-color: $color-black;
   color: $color-white;
-  z-index: z("preloader");
-}
-.preloader__text {
-  max-width: 80rem;
-  font-size: 0;
+  z-index: 999999;
+  padding: 0 5rem;
+  cursor: none;
+  touch-action: none;
 
-  span {
-    display: inline-block;
+  .preloader__line {
+    position: absolute;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    background-color: $color-white;
+
+    &.left {
+      left: 5rem;
+    }
+    &.right {
+      right: 5rem;
+    }
+  }
+
+  .preloader__text {
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
+    @extend %title-30;
     overflow: hidden;
-  }
 
-  span span {
-    @extend %title-53;
-    font-family: $font-ginger;
+    @include media("<phone") {
+      left: 1rem;
+    }
   }
-}
-.preloader__number {
-  position: absolute;
-  overflow: hidden;
-  bottom: 5rem;
-  right: 5%;
-  @extend %title-120;
-}
+  .preloader__number {
+    position: absolute;
+    overflow: hidden;
+    top: 3rem;
+    right: 2rem;
+    @extend %title-20;
+    overflow: hidden;
 
-.preloader__number__text {
-  display: inline-block;
-  font-family: $font-ginger;
+    @include media("<phone") {
+      right: 1rem;
+    }
+  }
 }

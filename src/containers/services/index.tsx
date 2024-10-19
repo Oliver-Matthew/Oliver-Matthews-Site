@@ -19,9 +19,6 @@ export default function Services() {
     const itemParagraphs = gsap.utils.toArray(
       ".services__item__text > p"
     ) as HTMLElement[];
-    const itemButtons = gsap.utils.toArray(
-      ".services__item__text > a"
-    ) as HTMLAnchorElement[];
 
     header.words?.forEach((word) => {
       gsap.fromTo(
@@ -110,28 +107,6 @@ export default function Services() {
           duration: 1,
           ease: "power1.inOut",
           stagger: 0.1,
-          scrollTrigger: {
-            trigger: item,
-            start: "top bottom",
-            // end: "+=100",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
-
-    itemButtons.forEach((item) => {
-      gsap.fromTo(
-        item,
-        {
-          xPercent: 100,
-          autoAlpha: 0,
-        },
-        {
-          xPercent: 0,
-          autoAlpha: 1,
-          duration: 1,
-          // ease: "power4.in",
           scrollTrigger: {
             trigger: item,
             start: "top bottom",
