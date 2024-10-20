@@ -10,6 +10,7 @@ import Image from "next/image";
 import LinkDrawer from "@/components/ui/link-drawer";
 
 const aboutusLinks = [
+  { link: "/about-us", external: false, name: "About Us" },
   { link: "/about-us#our-values", external: false, name: "Our Values" },
   { link: "/about-us#our-team", external: false, name: "Meet Our Team" },
 ];
