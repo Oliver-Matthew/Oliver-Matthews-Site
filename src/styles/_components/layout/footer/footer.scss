@@ -26,14 +26,14 @@ footer.footer {
       font-size: 12rem;
       text-align: start;
       color: $color-tropical-rain-forest;
-      opacity: 0.3;
+      opacity: 0.1;
     }
 
     & > h3 {
       text-align: start;
       @extend %description-16;
       font-weight: 600;
-      // color: $color-tropical-rain-forest;
+      color: $color-tropical-rain-forest;
     }
 
     & > form {
@@ -78,6 +78,7 @@ footer.footer {
   .footer__top__wrapper {
     @include flex(flex-start, flex-start, row);
     gap: 10rem;
+    padding: 2rem 0;
 
     // background-color: $color-tropical-rain-forest;
 
