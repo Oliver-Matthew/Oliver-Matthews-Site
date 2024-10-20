@@ -76,7 +76,7 @@ footer.footer {
   }
 
   .footer__top__wrapper {
-    @include flex(flex-start, flex-start, row);
+    @include flex(flex-start, space-between, row);
     gap: 10rem;
     padding: 2rem 0;
 
