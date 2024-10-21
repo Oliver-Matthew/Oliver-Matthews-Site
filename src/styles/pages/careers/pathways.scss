@@ -30,8 +30,8 @@
     @include flex(flex-start, flex-start, column);
     gap: 1rem;
     width: min(49%, 600px);
-    min-height: 40rem;
-    padding: 1rem 2rem;
+    min-height: 35rem;
+    padding: 2rem 2rem;
     box-sizing: border-box;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 
@@ -59,8 +59,9 @@
     }
 
     p {
-      @extend %description-12;
+      //   @extend %description-12;
       // font-size: 1rem;
+      font-size: 16px;
       line-height: 1.4;
       justify-self: start;
       overflow: hidden;
