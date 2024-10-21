@@ -2,11 +2,11 @@
 import { useState } from "react";
 import Link from "next/link";
 
-import PrimaryButton from "@/components/common/buttons/primary-button";
 // import { DropDown } from "@/components/ui/dropdown";
 
 import OliverMatthewsLogo from "@/assets/images/oliver-matthews-logo.png";
 import Image from "next/image";
+import LinkButton from "@/components/common/buttons/link-button";
 // import LinkDrawer from "@/components/ui/link-drawer";
 
 export default function Header() {
@@ -49,9 +49,13 @@ export default function Header() {
             </ul>
           </nav>
 
-          <PrimaryButton showArrow BUTTON_VARIANT="GREEN">
+          <LinkButton
+            href="/careers"
+            BUTTON_TYPE="GREEN"
+            style={{ paddingInline: "2.5rem" }}
+          >
             Join Us
-          </PrimaryButton>
+          </LinkButton>
         </div>
 
         <div className="header__mobile">
