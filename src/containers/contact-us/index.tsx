@@ -23,6 +23,12 @@ export default function ContactUs() {
     <main className="contact__us__page">
       <h2 className="title">Contact Us</h2>
 
+      <p className="intro__text">
+        No matter which side of the Atlantic you are on, feel free to reach out
+        to us, and we will be more than happy to provide a detailed explanation
+        of how our team can assist you.
+      </p>
+
       <form
         action=""
         //   onSubmit={handleSubmit}
@@ -45,6 +51,17 @@ export default function ContactUs() {
           Submit
         </PrimaryButton>
       </form>
+
+      <p className="outro__text">
+        <span> Oliver & Matthews</span> is committed to protecting and
+        respecting your privacy, and we&apos;ll only use your personal
+        information to administer your account and to provide the products and
+        services you requested from us. From time to time, we would like to
+        contact you about our products and services, as well as other content
+        that may be of interest to you. If you consent to us contacting you for
+        this purpose, please tick below to say how you would like us to contact
+        you:
+      </p>
     </main>
   );
 }

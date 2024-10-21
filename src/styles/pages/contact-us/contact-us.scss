@@ -9,10 +9,30 @@ main.contact__us__page {
   }
 
   .title {
-    font-size: clamp(2rem, 4vw, 4rem);
+    font-size: clamp(2.5rem, 4vw, 4rem);
     font-weight: 700;
     color: $color-tropical-rain-forest;
-    text-decoration: underline;
+  }
+
+  .intro__text {
+    width: min(100%, 600px);
+    margin: 2rem auto 0;
+    font-size: clamp(15px, 3vw, 18px);
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .outro__text {
+    width: min(100%, 600px);
+    margin: 3rem auto 0;
+    font-size: clamp(14px, 3vw, 16px);
+    text-align: center;
+    font-weight: 500;
+
+    span {
+      color: $color-tropical-rain-forest;
+      font-weight: 700;
+    }
   }
 
   form {
@@ -29,7 +49,7 @@ main.contact__us__page {
       padding: 0 1rem;
       border: 1px solid $color-tropical-rain-forest;
       outline: none;
-      font-size: 1rem;
+      @extend %description-12;
     }
     textarea {
       width: 100%;
@@ -37,7 +57,7 @@ main.contact__us__page {
       padding: 1rem;
       border: 1px solid $color-tropical-rain-forest;
       outline: none;
-      font-size: 1rem;
+      @extend %description-12;
     }
   }
 }
