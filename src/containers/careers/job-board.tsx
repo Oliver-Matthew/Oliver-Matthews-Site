@@ -1,5 +1,6 @@
 import React from "react";
-
+import Image from "next/image";
+import CareerProgressImg from "@/assets/images/careers/career-progress.jpeg";
 const roles = [
   {
     id: 1,
@@ -55,6 +56,16 @@ export default function JobBoard() {
           );
         })}
       </div>
+
+      <figure className="career__progress__image">
+        <Image
+          src={CareerProgressImg}
+          alt="career progress"
+          width={400}
+          height={400}
+          placeholder="blur"
+        />
+      </figure>
     </section>
   );
 }

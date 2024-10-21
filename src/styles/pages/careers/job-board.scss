@@ -75,4 +75,17 @@
       }
     }
   }
+
+  .career__progress__image {
+    margin: 4rem 0 0;
+    position: relative;
+    width: 100%;
+    min-height: 30rem;
+
+    img {
+      @extend %cover;
+      object-fit: scale-down;
+      border-radius: inherit;
+    }
+  }
 }
