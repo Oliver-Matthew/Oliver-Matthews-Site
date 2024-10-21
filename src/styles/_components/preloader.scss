@@ -6,8 +6,8 @@
   height: 100dvh;
   overflow: hidden;
   text-align: center;
-  background-color: $color-black;
-  color: $color-white;
+  background-color: $color-white;
+  color: $color-black;
   z-index: 999999;
   padding: 0 5rem;
   clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
@@ -54,10 +54,27 @@
     p {
       transform: translateY(50px);
       font-family: $font-ginger;
+      color: $color-tropical-rain-forest;
     }
 
     @include media("<phone") {
       right: 1rem;
+    }
+  }
+
+  .preloader__image {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    width: 20rem;
+    aspect-ratio: 1/0.9;
+
+    img {
+      @extend %cover;
+      object-fit: contain;
+      opacity: 0;
     }
   }
 }

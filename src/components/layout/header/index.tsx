@@ -3,33 +3,11 @@ import { useState } from "react";
 import Link from "next/link";
 
 import PrimaryButton from "@/components/common/buttons/primary-button";
-import { DropDown } from "@/components/ui/dropdown";
+// import { DropDown } from "@/components/ui/dropdown";
 
 import OliverMatthewsLogo from "@/assets/images/oliver-matthews-logo.png";
 import Image from "next/image";
-import LinkDrawer from "@/components/ui/link-drawer";
-
-const aboutusLinks = [
-  { link: "/about-us", external: false, name: "About Us" },
-  { link: "/about-us#our-values", external: false, name: "Our Values" },
-  { link: "/about-us#our-team", external: false, name: "Meet Our Team" },
-];
-
-const servicesLinks = [
-  { link: "/services", external: false, name: "Services" },
-  { link: "/change-service", external: false, name: "Change " },
-  { link: "/data-service", external: false, name: "Data " },
-  {
-    link: "/operations-service",
-    external: false,
-    name: "Operations ",
-  },
-  {
-    link: "/engineering-service",
-    external: false,
-    name: "Engineering",
-  },
-];
+// import LinkDrawer from "@/components/ui/link-drawer";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState(false);
@@ -52,10 +30,12 @@ export default function Header() {
           <nav className="nav__wrapper">
             <ul>
               <li>
-                <DropDown links={aboutusLinks}>About Us</DropDown>
+                {/* <DropDown links={aboutusLinks}>About Us</DropDown> */}
+                <Link href="/about-us">About Us</Link>
               </li>
               <li>
-                <DropDown links={servicesLinks}>Services</DropDown>
+                {/* <DropDown links={servicesLinks}>Services</DropDown> */}
+                <Link href="/services">Services</Link>
               </li>
               <li>
                 <Link href="/careers">Careers</Link>
@@ -98,20 +78,26 @@ export default function Header() {
           <div className={`mobile__menu ${openMenu ? "open" : ""}`}>
             <ul className="mobile__nav__list">
               <li>
-                <LinkDrawer
+                {/* <LinkDrawer
                   links={aboutusLinks}
                   onClick={() => setOpenMenu(false)}
                 >
                   About Us
-                </LinkDrawer>
+                </LinkDrawer> */}
+                <Link href="/about-us" onClick={() => setOpenMenu(false)}>
+                  About Us
+                </Link>
               </li>
               <li>
-                <LinkDrawer
+                {/* <LinkDrawer
                   links={servicesLinks}
                   onClick={() => setOpenMenu(false)}
                 >
                   Services
-                </LinkDrawer>
+                </LinkDrawer> */}
+                <Link href="/services" onClick={() => setOpenMenu(false)}>
+                  Services
+                </Link>
               </li>
               <li>
                 <Link href="/careers" onClick={() => setOpenMenu(false)}>
@@ -137,3 +123,23 @@ export default function Header() {
     </header>
   );
 }
+
+// const aboutusLinks = [
+//   { link: "/about-us#our-values", external: false, name: "Our Values" },
+//   { link: "/about-us#our-team", external: false, name: "Meet Our Team" },
+// ];
+
+// const servicesLinks = [
+//   { link: "/change-service", external: false, name: "Change " },
+//   { link: "/data-service", external: false, name: "Data " },
+//   {
+//     link: "/operations-service",
+//     external: false,
+//     name: "Operations ",
+//   },
+//   {
+//     link: "/engineering-service",
+//     external: false,
+//     name: "Engineering",
+//   },
+// ];
