@@ -1,7 +1,7 @@
 .blog__section {
   position: relative;
   width: 100%;
-  padding: 3rem 6rem;
+  padding: 3rem 9rem;
   overflow: hidden;
 
   @include media("<tablet") {
@@ -21,10 +21,11 @@
     box-sizing: border-box;
 
     .blog__item {
-      width: min(32%, 400px);
-      min-height: 30rem;
+      width: min(32%, 450px);
+      // min-height: 15rem;
       box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
       border-radius: 10px;
+      flex-grow: 2;
 
       @include media("<phone") {
         width: min(100%, 450px);
@@ -35,7 +36,7 @@
         width: 100%;
         aspect-ratio: 1/0.7;
         overflow: hidden;
-        border-radius: inherit;
+        border-radius: 10px 10px 0 0;
 
         @include media("<phone") {
           aspect-ratio: 1/0.5;
@@ -54,9 +55,9 @@
 
       .blog__text__wrapper {
         @include flex(flex-start, flex-start, column);
-        gap: 4rem;
+        gap: 2rem;
         width: 100%;
-        padding: 2rem 1.2rem;
+        padding: 1rem 1.2rem;
 
         h3 {
           @extend %description-16;

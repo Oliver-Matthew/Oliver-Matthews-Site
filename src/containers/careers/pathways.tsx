@@ -124,12 +124,7 @@ export default function Pathways() {
             opportunities and start your journey with us today!
           </p>
 
-          <LinkButton
-            href="/careers"
-            width="FULL"
-            BUTTON_TYPE="GREEN"
-            style={{ minHeight: "4.5rem", minWidth: "12rem" }}
-          >
+          <LinkButton href="/careers" width="FULL" BUTTON_TYPE="GREEN">
             {" "}
             Apply Now
           </LinkButton>
@@ -151,12 +146,7 @@ export default function Pathways() {
             business intelligence.
           </p>
 
-          <LinkButton
-            href="/careers"
-            width="FULL"
-            BUTTON_TYPE="GREEN"
-            style={{ minHeight: "4.5rem", minWidth: "12rem" }}
-          >
+          <LinkButton href="/careers" width="FULL" BUTTON_TYPE="GREEN">
             Apply Now
           </LinkButton>
         </div>
@@ -179,12 +169,7 @@ export default function Pathways() {
             and future-ready.
           </p>
 
-          <LinkButton
-            href="/careers"
-            width="FULL"
-            BUTTON_TYPE="GREEN"
-            style={{ minHeight: "4.5rem", minWidth: "12rem" }}
-          >
+          <LinkButton href="/careers" width="FULL" BUTTON_TYPE="GREEN">
             Apply Now
           </LinkButton>
         </div>
@@ -203,12 +188,7 @@ export default function Pathways() {
             reliable, scalable, and aligned with their strategic objectives.
           </p>
 
-          <LinkButton
-            href="/careers"
-            width="FULL"
-            BUTTON_TYPE="GREEN"
-            style={{ minHeight: "4.5rem", minWidth: "12rem" }}
-          >
+          <LinkButton href="/careers" width="FULL" BUTTON_TYPE="GREEN">
             Apply Now
           </LinkButton>
         </div>

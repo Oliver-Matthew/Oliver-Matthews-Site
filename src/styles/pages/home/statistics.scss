@@ -24,13 +24,17 @@
     }
 
     & > .statistics__item {
-      width: min(100%, 300px);
+      width: min(48%, 500px);
       @include flex(center, center, column);
-      flex-grow: 1;
+      flex-grow: 2;
       gap: 2rem;
       padding: 2rem;
       background-color: $color-wild-sand;
       border-radius: 10px;
+
+      @include media("<phone") {
+        width: min(100%, 500px);
+      }
 
       &:nth-child(2n) {
         h2 {

@@ -15,10 +15,11 @@
     width: 100%;
     justify-self: flex-start;
     isolation: isolate;
+    text-align: center;
     h1 {
       @extend %title-45;
       line-height: 1.2;
-      font-weight: 600;
+      font-weight: 800;
       color: $color-white;
       overflow: hidden;
       font-kerning: none;

@@ -31,12 +31,13 @@
     // }
 
     & > div {
-      width: min(49%, 500px);
+      width: min(49%, 700px);
       @include flex(center, flex-start, column);
       gap: 2rem;
       padding: 2rem;
       // box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
       border: 0.5px solid $color-tropical-rain-forest;
+      flex-grow: 2;
 
       @include media("<phone") {
         width: min(100%, 500px);

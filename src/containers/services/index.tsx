@@ -185,11 +185,7 @@ export default function Services() {
               through complex transformations, ensuring seamless transitions and
               sustainable growth.
             </p>
-            <LinkButton
-              href="/change-service"
-              style={{ minHeight: "4.5rem", minWidth: "12rem" }}
-              BUTTON_TYPE="GREEN"
-            >
+            <LinkButton href="/change-service" BUTTON_TYPE="GREEN">
               Read More
             </LinkButton>
           </div>
@@ -251,11 +247,7 @@ export default function Services() {
               organisations unlock valuable insights, streamline operations, and
               gain a competitive
             </p>
-            <LinkButton
-              href="/data-service"
-              style={{ minHeight: "4.5rem", minWidth: "12rem" }}
-              BUTTON_TYPE="GREEN"
-            >
+            <LinkButton href="/data-service" BUTTON_TYPE="GREEN">
               Read More
             </LinkButton>
           </div>
@@ -333,11 +325,7 @@ export default function Services() {
               managing, and enhancing your IT environment to support your
               organization&apos;s strategic
             </p>
-            <LinkButton
-              href="/operations-service"
-              style={{ minHeight: "4.5rem", minWidth: "12rem" }}
-              BUTTON_TYPE="GREEN"
-            >
+            <LinkButton href="/operations-service" BUTTON_TYPE="GREEN">
               Read More
             </LinkButton>
           </div>
@@ -430,11 +418,7 @@ export default function Services() {
               robust, scalable, and secure software systems tailored to meet the
               unique needs of your organization.
             </p>
-            <LinkButton
-              href="/engineering-service"
-              style={{ minHeight: "4.5rem", minWidth: "12rem" }}
-              BUTTON_TYPE="GREEN"
-            >
+            <LinkButton href="/engineering-service" BUTTON_TYPE="GREEN">
               Read More
             </LinkButton>
           </div>

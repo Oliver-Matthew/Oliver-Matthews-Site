@@ -12,10 +12,6 @@ export default function JoinUs() {
       types: "words",
     });
 
-    const textsLines = new SplitType(".join__us__text > p", {
-      types: "lines",
-    });
-
     const joinusImage = document.querySelector(
       ".join__us__image > .image__mask"
     );
@@ -45,6 +41,7 @@ export default function JoinUs() {
         },
       }
     );
+
     gsap.fromTo(
       ".join__us__text > h3 > div",
       {
@@ -68,30 +65,27 @@ export default function JoinUs() {
       }
     );
 
-    textsLines?.lines?.forEach((line) => {
-      gsap.fromTo(
-        line,
-        {
-          y: "100",
-          rotate: "5deg",
-          autoAlpha: 0,
+    gsap.fromTo(
+      ".join__us__text > p",
+      {
+        y: "100",
+        rotate: "5deg",
+        autoAlpha: 0,
+      },
+      {
+        y: "0",
+        rotate: "0deg",
+        autoAlpha: 1,
+        duration: 1,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: ".join__us__text > p",
+          start: "top bottom",
+          // end: "+=100",
+          toggleActions: "play none none none",
         },
-        {
-          y: "0",
-          rotate: "0deg",
-          autoAlpha: 1,
-          duration: 1,
-          ease: "power1.inOut",
-          stagger: 0.1,
-          scrollTrigger: {
-            trigger: line,
-            start: "top bottom",
-            // end: "+=100",
-            toggleActions: "play none none none",
-          },
-        }
-      );
-    });
+      }
+    );
 
     gsap.to(joinusImage, {
       duration: 1,
@@ -115,21 +109,17 @@ export default function JoinUs() {
           <p>
             Are you passionate about driving innovation and making a real
             impact?
-          </p>
-          <p>
+            <br /> <br />
             At Oliver & Matthews, we&apos;re on the lookout for dynamic,
             forward-thinking individuals who are eager to contribute to our
             mission of transforming businesses through Change and
             Transformation, Data Analytics, Software Engineering, and IT
             Operations.
-          </p>
-          <p>
+            <br /> <br />
             We offer a collaborative and supportive environment where your ideas
             and expertise can thrive. Join our team and be part of a company
             that values Innovation, Individuality, Togetherness, Accountability,
-            Ownership, and Excellence.
-          </p>
-          <p>
+            Ownership, and Excellence. <br /> <br />
             If you&apos;re ready to embrace new challenges and help shape the
             future of our clients, we&apos;d love to hear from you. Explore our
             opportunities and start your journey with us today!

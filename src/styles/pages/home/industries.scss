@@ -2,7 +2,7 @@
   position: relative;
   width: 100%;
   gap: 2rem;
-  padding: 4rem 9rem;
+  padding: 2rem 9rem 4rem;
   overflow: hidden;
 
   @include media("<tablet") {
@@ -31,12 +31,13 @@
     // }
 
     & > div {
-      width: min(32%, 350px);
-      min-height: 300px;
+      width: min(32%, 500px);
+      min-height: 250px;
       @include flex(flex-start, space-between, column);
       gap: 2rem;
       padding: 2rem;
       background-color: $color-wild-sand;
+      flex-grow: 2;
 
       @include media("<phone") {
         width: min(100%, 400px);

@@ -25,6 +25,10 @@ html {
   @include media("<phone") {
     font-size: calc((100vw / 765) * 16);
   }
+
+  //   @include media("<sm-phone") {
+  //   font-size: calc((100vw / 430) * 16);
+  // }
 }
 
 body {
