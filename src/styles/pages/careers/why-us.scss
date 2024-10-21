@@ -22,7 +22,8 @@
     @include flex(center, flex-start, column);
     gap: 2rem;
     width: min(49%, 600px);
-    min-height: 39rem;
+    min-height: min(700px, 35rem);
+    // min-height: 35rem;
     padding: 4rem;
     background-color: $color-tropical-rain-forest;
     color: $color-white;
@@ -36,8 +37,8 @@
       background-color: $color-white;
     }
     p {
-      @extend %description-12;
-      // font-size: 16px;
+      // @extend %description-12;
+      font-size: 16px;
       // font-size: 1rem;
       line-height: 1.4;
       overflow: hidden;
