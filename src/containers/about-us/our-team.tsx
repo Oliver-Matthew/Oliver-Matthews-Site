@@ -206,25 +206,23 @@ export function TeamCarousel() {
                 ref={teamSlideRef.current[index]}
               >
                 <div className="team__member">
+                  <figure className="member__image">
+                    <Image
+                      src={item.image}
+                      alt={item.name}
+                      width={200}
+                      height={200}
+                    />
+                  </figure>
                   <div className="bio__text">
                     <span>&ldquo;</span>
                     <p>{item.text}</p>
                     <span>&rdquo;</span>
                   </div>
 
-                  <div className="member__name__picture">
-                    <span className="member__name">
-                      {item.name} ({item.location})
-                    </span>
-
-                    <figure className="member__image">
-                      <Image
-                        src={item.image}
-                        alt={item.name}
-                        width={200}
-                        height={200}
-                      />
-                    </figure>
+                  <div className="member__name__role">
+                    <span className="member__name">{item.name}</span>
+                    <span className="member__role">({item.role})</span>
                   </div>
                 </div>
               </div>

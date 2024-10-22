@@ -88,6 +88,7 @@ export const teamCarousel = [
 `,
     name: "Cecilia, U.",
     location: "Lagos, Nigeria",
+    role: "data analyst",
   },
   {
     id: 2,
@@ -96,6 +97,7 @@ export const teamCarousel = [
 `,
     name: "Eric, A.",
     location: "Houston, Texas",
+    role: "salesforce analyst",
   },
   {
     id: 3,
@@ -105,6 +107,7 @@ My expertise includes gathering and analyzing business requirements, conducting 
 `,
     name: "Minah, M.",
     location: "London, England",
+    role: "business analyst",
   },
   {
     id: 4,
@@ -115,6 +118,7 @@ I am passionate about fostering a culture of security awareness and have develop
 `,
     name: "Timothy, K.",
     location: "Nairobi, Kenya",
+    role: "cybersecurity expert",
   },
   {
     id: 5,
@@ -124,5 +128,6 @@ With a deep understanding of enterprise networking, I am proficient in routing, 
 `,
     name: "Victor, A.",
     location: "Lagos, Nigeria",
+    role: "solution architect",
   },
 ];

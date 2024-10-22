@@ -129,6 +129,25 @@
             padding: 0rem 2rem;
             box-sizing: border-box;
 
+            .member__image {
+              position: relative;
+              width: 8rem;
+              aspect-ratio: 1/1;
+              border-radius: 50%;
+              overflow: hidden;
+
+              img {
+                @extend %cover;
+                object-fit: cover;
+                border-radius: inherit;
+                transition: transform 300ms ease-in-out;
+
+                &:hover {
+                  transform: scale(1.1);
+                }
+              }
+            }
+
             .bio__text {
               // width: min(100%, 1000px);
               @include flex(flex-start, center, row);
@@ -147,32 +166,15 @@
               }
             }
 
-            .member__name__picture {
+            .member__name__role {
               @include flex(center, center, row);
               gap: 1rem;
 
-              .member__name {
+              .member__name,
+              .member__role {
                 font-size: 1.2rem;
                 font-weight: 600;
-              }
-
-              .member__image {
-                position: relative;
-                width: 8rem;
-                aspect-ratio: 1/1;
-                border-radius: 50%;
-                overflow: hidden;
-
-                img {
-                  @extend %cover;
-                  object-fit: cover;
-                  border-radius: inherit;
-                  transition: transform 300ms ease-in-out;
-
-                  &:hover {
-                    transform: scale(1.1);
-                  }
-                }
+                color: $color-tropical-rain-forest;
               }
             }
           }
