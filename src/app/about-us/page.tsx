@@ -1,6 +1,7 @@
 import AboutUs from "@/containers/about-us";
-import React from "react";
-
+export const metadata = {
+  title: "About Us",
+};
 export default function Page() {
   return <AboutUs />;
 }

@@ -53,7 +53,7 @@ export default function Footer() {
             <h3 className="footer__column__header">Quick Links</h3>
 
             <div className="footer__links">
-              <Link href="/">Contact Us</Link>
+              <Link href="/contact-us">Contact Us</Link>
               <Link href="/">Blog</Link>
             </div>
           </div>
@@ -62,8 +62,8 @@ export default function Footer() {
             <h3 className="footer__column__header">Careers</h3>
 
             <div className="footer__links">
-              <Link href="/">Join Us</Link>
-              <Link href="/">Explore</Link>
+              <Link href="/careers">Join Us</Link>
+              <Link href="/services">Explore</Link>
             </div>
           </div>
 
@@ -71,8 +71,15 @@ export default function Footer() {
             <h3 className="footer__column__header">Contact</h3>
 
             <div className="footer__links">
-              <a href="tel:+">+30 9877 777 00</a>
-              <a href="mailto:">info@olivermatthews.org</a>
+              {/* <a href="tel:+">+30 9877 777 00</a> */}
+
+              <a
+                href="mailto:oliverandmatthers@yahoo.com"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                oliverandmatthers@yahoo.com{" "}
+              </a>
             </div>
           </div>
         </div>
