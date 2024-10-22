@@ -124,8 +124,11 @@ export default function Pathways() {
             opportunities and start your journey with us today!
           </p>
 
-          <LinkButton href="/careers" width="FULL" BUTTON_TYPE="GREEN">
-            {" "}
+          <LinkButton
+            href="mailto:oliverandmatthers@yahoo.com?subject=Application%20to%20Change%20Pathway"
+            width="FULL"
+            BUTTON_TYPE="GREEN"
+          >
             Apply Now
           </LinkButton>
         </div>
@@ -146,7 +149,11 @@ export default function Pathways() {
             business intelligence.
           </p>
 
-          <LinkButton href="/careers" width="FULL" BUTTON_TYPE="GREEN">
+          <LinkButton
+            href="mailto:oliverandmatthers@yahoo.com?subject=Application%20to%20Data%20Analytics%20Pathway"
+            width="FULL"
+            BUTTON_TYPE="GREEN"
+          >
             Apply Now
           </LinkButton>
         </div>
@@ -169,7 +176,11 @@ export default function Pathways() {
             and future-ready.
           </p>
 
-          <LinkButton href="/careers" width="FULL" BUTTON_TYPE="GREEN">
+          <LinkButton
+            href="mailto:oliverandmatthers@yahoo.com?subject=Application%20to%20Engineering%20Pathway"
+            width="FULL"
+            BUTTON_TYPE="GREEN"
+          >
             Apply Now
           </LinkButton>
         </div>
@@ -188,7 +199,11 @@ export default function Pathways() {
             reliable, scalable, and aligned with their strategic objectives.
           </p>
 
-          <LinkButton href="/careers" width="FULL" BUTTON_TYPE="GREEN">
+          <LinkButton
+            href="mailto:oliverandmatthers@yahoo.com?subject=Application%20to%20Operations%20Pathway"
+            width="FULL"
+            BUTTON_TYPE="GREEN"
+          >
             Apply Now
           </LinkButton>
         </div>

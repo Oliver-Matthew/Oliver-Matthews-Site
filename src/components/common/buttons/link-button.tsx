@@ -7,6 +7,7 @@ type BUTTON_WIDTH_TYPE = "FULL" | "NORMAL";
 
 type ButtonProps = {
   href: string;
+  external?: boolean;
   disabled?: boolean;
   style?: CSSProperties;
   children: ReactNode;
@@ -17,6 +18,7 @@ type ButtonProps = {
 export default function LinkButton(props: ButtonProps) {
   const {
     href,
+    external,
     disabled,
     children,
     style,
@@ -26,19 +28,27 @@ export default function LinkButton(props: ButtonProps) {
 
   return (
     <>
-      <Link
-        href={href}
-        className={clsx("link__button", {
-          disabled__button: disabled,
-          normal__button: BUTTON_TYPE === "PRIMARY",
-          secondary__button: BUTTON_TYPE === "SECONDARY",
-          green__button: BUTTON_TYPE === "GREEN",
-          fullWidth: width === "FULL",
-        })}
-        style={style}
-      >
-        {children}
-      </Link>
+      {external ? (
+        <>
+          <a href={href} target="_blank" rel="noopener noreferrer">
+            {children}
+          </a>
+        </>
+      ) : (
+        <Link
+          href={href}
+          className={clsx("link__button", {
+            disabled__button: disabled,
+            normal__button: BUTTON_TYPE === "PRIMARY",
+            secondary__button: BUTTON_TYPE === "SECONDARY",
+            green__button: BUTTON_TYPE === "GREEN",
+            fullWidth: width === "FULL",
+          })}
+          style={style}
+        >
+          {children}
+        </Link>
+      )}
     </>
   );
 }
