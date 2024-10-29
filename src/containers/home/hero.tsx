@@ -46,13 +46,15 @@ export default function Hero() {
   return (
     <section className="hero__section">
       {/* <HeroCarousel /> */}
-      <Image
-        src={HeroImg}
-        alt="oliver matthews"
-        width={1440}
-        height={1000}
-        placeholder="blur"
-      />
+      <figure className="hero__image">
+        <Image
+          src={HeroImg}
+          alt="oliver matthews"
+          width={1440}
+          height={1000}
+          placeholder="blur"
+        />
+      </figure>
       <div className="hero__texts">
         <h1>Solving Today,</h1>
         <h1>Innovating Tomorrow.</h1>
