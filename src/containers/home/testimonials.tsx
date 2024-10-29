@@ -16,7 +16,10 @@ export default function Testimonials() {
           <span>&rdquo;</span>
         </div>
 
-        <span className="reviewer">Oliver&apos;s Matthews, CEO</span>
+        <span className="reviewer">
+          {" "}
+          Sarah Matesun ( Oliver & Matthews, CEO)
+        </span>
       </div>
     </section>
   );

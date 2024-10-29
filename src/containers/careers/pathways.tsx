@@ -37,7 +37,7 @@ export default function Pathways() {
             trigger: word,
             start: "top bottom",
             // end: "+=100",
-            toggleActions: "play none none reverse",
+            toggleActions: "play none none none",
           },
         }
       );
@@ -93,6 +93,7 @@ export default function Pathways() {
       );
     });
   }, [".careers__pathways"]);
+
   return (
     <section className="careers__pathways">
       <h2 className="pathways__header">Pathways</h2>

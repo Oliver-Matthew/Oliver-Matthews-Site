@@ -10,7 +10,7 @@ import { gsap, useGSAP, SplitType } from "@/utils/gsap";
 // import { CustomCSSType } from "@/types/styles";
 
 import { heroCarousel } from "@/lib";
-import HeroImg from "@/assets/images/home/hero-img.jpg";
+import HeroImg from "@/assets/images/home/hero-img.jpeg";
 // import PrimaryButton from "@/components/common/buttons/primary-button";
 
 export default function Hero() {

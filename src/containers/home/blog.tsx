@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import BlogImage from "@/assets/images/home/hero-img.jpg";
+import BlogImage from "@/assets/images/home/hero-img.jpeg";
 import LinkButton from "@/components/common/buttons/link-button";
 
 // const postLists = [{ id: 1, title: "Blog Post", image: BlogImage }];

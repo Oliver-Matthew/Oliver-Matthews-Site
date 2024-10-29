@@ -1,0 +1,81 @@
+.vision__mission__section {
+  width: 100%;
+  padding: 7rem 9rem 0;
+
+  @include media("<tablet") {
+    padding: 5rem 2rem 0;
+  }
+
+  .vision__mission__header {
+    @extend %title-30;
+    font-weight: 800;
+    color: $color-tropical-rain-forest;
+    overflow: hidden;
+    // font-kerning: none;
+  }
+
+  .vision__mission__wrapper {
+    @include flex(center, center, row wrap);
+    gap: 4rem 1rem;
+    padding: 5rem 0 0;
+
+    @include media("<phone") {
+      gap: 8rem 1rem;
+    }
+
+    .content__wrapper {
+      @include flex(flex-start, flex-start, column);
+      gap: 1rem;
+      width: min(49%, 600px);
+      min-height: 30rem;
+
+      @include media("<phone") {
+        width: min(100%, 500px);
+      }
+
+      & > .horizontal__line {
+        width: 80%;
+        height: 2px;
+        background-color: $color-tropical-rain-forest;
+      }
+
+      & > h3 {
+        @extend %title-20;
+        font-weight: 600;
+        color: $color-tropical-rain-forest;
+        padding: 0 2rem;
+        overflow: hidden;
+
+        @include media("<phone") {
+          padding: 0rem 2rem;
+        }
+      }
+
+      .content__text {
+        width: 100%;
+        min-height: 25rem;
+        padding: 1rem 2rem;
+        @include flex(flex-start, center, column);
+        gap: 1.5rem;
+        background-color: $color-wild-sand;
+        color: $color-black;
+        font-kerning: none;
+
+        @include media("<phone") {
+          padding: 3rem 2rem;
+          gap: 3rem;
+          width: 100%;
+          height: auto;
+        }
+
+        p {
+          @extend %description-12;
+          font-size: clamp(15px, 2.5vw, 16px);
+          line-height: 1.5;
+          font-kerning: none;
+          overflow: hidden;
+        }
+      }
+    }
+  }
+}

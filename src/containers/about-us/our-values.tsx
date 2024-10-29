@@ -18,14 +18,12 @@ export default function OurValues() {
     const longLines = gsap.utils.toArray(
       ".value__item__wrapper > .horizontal__line"
     ) as HTMLElement[];
-
     const valuesHeaders = gsap.utils.toArray(
       ".value__item__wrapper > h3"
     ) as HTMLElement[];
-
-    const textsLines = new SplitType(".value__item__text > p", {
-      types: "lines",
-    });
+    const valuesTexts = gsap.utils.toArray(
+      ".value__item__text > p"
+    ) as HTMLElement[];
 
     gsap.fromTo(
       ".our__values__header > div",
@@ -90,9 +88,9 @@ export default function OurValues() {
       );
     });
 
-    textsLines?.lines?.forEach((line) => {
+    valuesTexts?.forEach((text) => {
       gsap.fromTo(
-        line,
+        text,
         {
           y: "100",
           skewY: "5",
@@ -106,7 +104,7 @@ export default function OurValues() {
           ease: "power1.inOut",
           stagger: 0.1,
           scrollTrigger: {
-            trigger: line,
+            trigger: text,
             start: "top bottom",
             // end: "+=100",
             toggleActions: "play none none none",
