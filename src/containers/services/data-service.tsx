@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import { gsap, useGSAP, SplitType } from "@/utils/gsap";
-import DataImg from "@/assets/images/services/data-service.jpg";
+import DataImg from "@/assets/images/services/data-service.jpeg";
 
 export default function DataService() {
   useGSAP(() => {
