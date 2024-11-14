@@ -11,7 +11,6 @@ export default function Footer() {
 		<footer className="footer">
 			<div className="footer__wrapper">
 				<div className="footer__form__wrapper">
-					{/* <h2>Contact</h2> */}
 					<h3>Let&apos;s Talk Strategies:</h3>
 					<form action="">
 						<input type="mail" placeholder="Enter your email" />
