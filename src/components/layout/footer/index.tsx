@@ -72,11 +72,11 @@ export default function Footer() {
 
 						<div className="footer__links">
 							<a
-								href="mailto:sarah.matesun@oliver-matthews.com"
+								href="mailto:info@oliver-matthews.com"
 								target="_blank"
 								rel="noopener noreferrer"
 							>
-								sarah.matesun@oliver-matthews.com{" "}
+								info@oliver-matthews.com{" "}
 							</a>
 						</div>
 					</div>
