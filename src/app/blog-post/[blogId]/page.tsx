@@ -1,30 +1,30 @@
 import { query } from "../../../lib/hashnode";
 import Image from "next/image";
 
-// interface Post {
-//   author: {
-//     name: string;
-//     profilePicture: string;
-//     socialMediaLinks: {
-//       twitter: string;
-//     };
-//   };
-//   content: {
-//     html: string;
-//   };
-//   coverImage: {
-//     url: string;
-//   };
-//   id: string;
-//   publishedAt: string;
-//   title: string;
-// }
+interface Post {
+  author: {
+    name: string;
+    profilePicture: string;
+    socialMediaLinks: {
+      twitter: string;
+    };
+  };
+  content: {
+    html: string;
+  };
+  coverImage: {
+    url: string;
+  };
+  id: string;
+  publishedAt: string;
+  title: string;
+}
 
 interface PostParams {
   params: { blogId: string };
 }
 
-export default async function BlogPost({ params }: PostParams) {
+export default function BlogPost({ params }: { params: { blogId: string } }) {
   const blogId = params.blogId;
 
   const { data: { post } } = await query({
