@@ -18,9 +18,32 @@ main.change__service__page {
     }
   }
 
+  h2 {
+    @extend %description-16;
+    line-height: 1.5;
+    font-weight: 600;
+    color: $color-tropical-rain-forest;
+    margin-bottom: 1rem;
+  }
+
+  h3 {
+    @extend %description-16;
+    line-height: 1.5;
+    font-weight: 600;
+    color: $color-tropical-rain-forest;
+    margin-bottom: 1rem;
+  }
+
+  h4 {
+    @extend %description-16;
+    line-height: 1.5;
+    font-weight: 400;
+    color: $color-tropical-rain-forest;
+    margin-bottom: 1rem;
+  }
   .change__service__page__header {
     @extend %title-30;
-    line-height: 1.2;
+    line-height: 1.4;
     font-weight: 800;
     color: $color-tropical-rain-forest;
     margin: 2rem 0 0;
@@ -34,16 +57,41 @@ main.change__service__page {
 
     p {
       @extend %description-12;
-      line-height: 1.5;
+      line-height: 1.8;
       overflow: hidden;
       font-kerning: none;
+      margin-bottom: 1.5rem;
 
       span {
         @extend %description-12;
-        line-height: 1.5;
+        line-height: 1.8;
         font-weight: 600;
         color: $color-tropical-rain-forest;
+        margin-bottom: 1.5rem;
       }
     }
+    
+  }
+
+  .change__service__content__blog {
+    margin: 2rem 0 0;
+    width: min(100%);
+
+    p {
+      @extend %description-12;
+      line-height: 1.8;
+      overflow: hidden;
+      font-kerning: none;
+      margin-bottom: 1.5rem;
+
+      span {
+        @extend %description-12;
+        line-height: 1.8;
+        font-weight: 600;
+        color: $color-tropical-rain-forest;
+        margin-bottom: 1.5rem;
+      }
+    }
+    
   }
 }
