@@ -20,14 +20,16 @@ import Image from "next/image";
 //   title: string;
 // }
 
-// interface PostParams {
-//   params: { blogId: string };
-// }
+interface PostParams {
+  params: Promise<{ blogId: string }>; // Update to reflect the Promise
+}
 
-export default async function BlogPost ({ params }: { params: { blogId: string } }) {
-  const { blogId } = params;
+export default async function BlogPost({ params }: PostParams) {
+  const { blogId } = await params; // Await the promise returned by `params`
 
-  const { data: { post } } = await query({
+  const {
+    data: { post },
+  } = await query({
     query: `
       query Post($id: ID!) {
         post(id: $id) {
@@ -53,7 +55,7 @@ export default async function BlogPost ({ params }: { params: { blogId: string }
     `,
     variables: {
       id: blogId,
-    }
+    },
   });
 
   if (!post) {
