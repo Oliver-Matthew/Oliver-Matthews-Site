@@ -74,11 +74,11 @@ export default function Footer() {
               {/* <a href="tel:+">+30 9877 777 00</a> */}
 
               <a
-                href="mailto:oliverandmatthers@yahoo.com"
+                href="mailto:info@oliver-matthews.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                oliverandmatthers@yahoo.com{" "}
+                info@oliver-matthews.com{" "}
               </a>
             </div>
           </div>

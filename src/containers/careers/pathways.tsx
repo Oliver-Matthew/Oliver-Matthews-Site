@@ -126,7 +126,7 @@ export default function Pathways() {
           </p>
 
           <LinkButton
-            href="mailto:oliverandmatthers@yahoo.com?subject=Application%20to%20Change%20Pathway"
+            href="mailto:careers@oliver-matthews.com?subject=Application%20to%20Change%20Pathway"
             width="FULL"
             BUTTON_TYPE="GREEN"
           >
@@ -151,7 +151,7 @@ export default function Pathways() {
           </p>
 
           <LinkButton
-            href="mailto:oliverandmatthers@yahoo.com?subject=Application%20to%20Data%20Analytics%20Pathway"
+            href="mailto:careers@oliver-matthews.com?subject=Application%20to%20Data%20Analytics%20Pathway"
             width="FULL"
             BUTTON_TYPE="GREEN"
           >
@@ -178,7 +178,7 @@ export default function Pathways() {
           </p>
 
           <LinkButton
-            href="mailto:oliverandmatthers@yahoo.com?subject=Application%20to%20Engineering%20Pathway"
+            href="mailto:careers@oliver-matthews.com?subject=Application%20to%20Engineering%20Pathway"
             width="FULL"
             BUTTON_TYPE="GREEN"
           >
@@ -201,7 +201,7 @@ export default function Pathways() {
           </p>
 
           <LinkButton
-            href="mailto:oliverandmatthers@yahoo.com?subject=Application%20to%20Operations%20Pathway"
+            href="mailto:careers@oliver-matthews.com?subject=Application%20to%20Operations%20Pathway"
             width="FULL"
             BUTTON_TYPE="GREEN"
           >
