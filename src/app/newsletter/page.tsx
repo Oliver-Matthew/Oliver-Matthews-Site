@@ -78,6 +78,7 @@ export default function Page() {
       <div className="blog__posts__wrapper">
         {posts.map((blog) => (
             <BlogCard
+              key={blog.id}
               title={blog.title}
               text={blog.content.text}
               blogId={blog.id}
