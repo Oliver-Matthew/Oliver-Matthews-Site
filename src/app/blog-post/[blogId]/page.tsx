@@ -24,7 +24,7 @@ interface PostParams {
   params: { blogId: string };
 }
 
-export default async function BlogPost({ params }: PostParams) {
+export default async function BlogPost ({ params }: { params: { blogId: string } }) {
   const { blogId } = params;
 
   const { data: { post } } = await query({
