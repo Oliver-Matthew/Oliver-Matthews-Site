@@ -1,24 +1,24 @@
 import { query } from "../../../lib/hashnode";
 import Image from "next/image";
 
-interface Post {
-  author: {
-    name: string;
-    profilePicture: string;
-    socialMediaLinks: {
-      twitter: string;
-    };
-  };
-  content: {
-    html: string;
-  };
-  coverImage: {
-    url: string;
-  };
-  id: string;
-  publishedAt: string;
-  title: string;
-}
+// interface Post {
+//   author: {
+//     name: string;
+//     profilePicture: string;
+//     socialMediaLinks: {
+//       twitter: string;
+//     };
+//   };
+//   content: {
+//     html: string;
+//   };
+//   coverImage: {
+//     url: string;
+//   };
+//   id: string;
+//   publishedAt: string;
+//   title: string;
+// }
 
 interface PostParams {
   params: { blogId: string };
