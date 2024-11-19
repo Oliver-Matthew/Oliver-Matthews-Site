@@ -20,9 +20,9 @@ import Image from "next/image";
 //   title: string;
 // }
 
-interface PostParams {
-  params: { blogId: string };
-}
+// interface PostParams {
+//   params: { blogId: string };
+// }
 
 export default async function BlogPost ({ params }: { params: { blogId: string } }) {
   const { blogId } = params;
