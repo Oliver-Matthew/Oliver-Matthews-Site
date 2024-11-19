@@ -2,9 +2,7 @@
 
 import { gql, useQuery } from "@apollo/client";
 import BlogCard from "@/components/layout/blogcard";
-import { FaRegNewspaper } from "react-icons/fa6";
 
-// Define the GraphQL query for fetching the blogs
 const GET_ARTICLES = gql`
   query User($pageSize: Int!, $page: Int!) {
     user(username: "harshtarg") {
